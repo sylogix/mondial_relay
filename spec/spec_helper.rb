@@ -2,7 +2,7 @@
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'mondial_relay_client'
+require 'mondial_relay'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

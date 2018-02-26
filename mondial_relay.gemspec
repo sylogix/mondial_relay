@@ -3,11 +3,11 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'mondial_relay_client/version'
+require 'mondial_relay/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'vinted-mondial_relay_client'
-  spec.version       = MondialRelayClient::VERSION
+  spec.name          = 'vinted-mondial_relay'
+  spec.version       = MondialRelay::VERSION
 
   spec.authors       = ['Žilvinas Verseckas']
   spec.email         = ['zilvinas.verseckas@vinted.com']
@@ -18,6 +18,9 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.require_paths = ['lib']
+  spec.bindir = 'bin'
+
+  spec.add_runtime_dependency 'savon', '~> 2.0'
 
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', '~> 12.3'
