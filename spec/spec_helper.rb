@@ -3,15 +3,19 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'mondial_relay'
+require 'support/fixture'
+require 'support/factory_bot'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
-  config.expect_with :rspec do |expectations|
-    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  config.before do
+    MondialRelay.configure do |mr_config|
+      mr_config.api_wsdl_url = 'https://api.mondialrelay.com/Web_Services.asmx?WSDL'
+      mr_config.api_url = 'http://www.mondialrelay.fr/webservice/'
+      mr_config.merchant_id = 'BDTEST13'
+      mr_config.api_secret = 'PrivateK'
+      mr_config.api_max_retries = 1
+      mr_config.debug = true
+    end
   end
-
-  config.mock_with :rspec do |mocks|
-    mocks.verify_partial_doubles = true
-  end
-
-  config.shared_context_metadata_behavior = :apply_to_host_groups
 end

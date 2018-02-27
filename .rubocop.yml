@@ -1,0 +1,56 @@
+LineLength:
+  Max: 99
+
+Documentation:
+  Enabled: false
+
+SignalException:
+  EnforcedStyle: only_raise
+
+TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+TrailingCommaInArguments:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+  Include:
+    - '**/Rakefile'
+    - '**/*.rake'
+  Exclude:
+    - db/**/*
+    - config/constants/manual_feature_rollout.rb
+    - config/constants/constants.rb
+    - config/constants/ads.rb
