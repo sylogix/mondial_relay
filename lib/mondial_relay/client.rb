@@ -14,6 +14,7 @@ module MondialRelay
       @config ||= {
         wsdl: MondialRelay.config.api_wsdl_url,
 
+        convert_request_keys_to: :none,
         element_form_default: :unqualified,
         env_namespace: :soap,
 
