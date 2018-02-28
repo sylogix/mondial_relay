@@ -47,8 +47,10 @@ module MondialRelay
       max_retries.times do |i|
         begin
           return yield
-        rescue Savon::Error, Net::OpenTimeout, Net::ReadTimeout => e
-          raise ClientError.new(e.message) if i + 1 == max_retries
+        rescue Savon::Error => e
+          raise ClientError.new(e.message)  if i + 1 == max_retries
+        rescue Net::OpenTimeout, Net::ReadTimeout => e
+          raise TimeoutError.new(e.message) if i + 1 == max_retries
         end
       end
     end
