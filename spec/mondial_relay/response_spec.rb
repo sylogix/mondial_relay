@@ -9,7 +9,15 @@ RSpec.describe MondialRelay::Response, '.for' do
   let(:params) { {} }
 
   let(:response) { double(:response) }
-  let(:body) { { test_response: { test_result: 'test' } } }
+  let(:body) do
+    {
+      test_response: {
+        test_result: {
+          stat: '0'
+        }
+      }
+    }
+  end
 
   before do
     stub_request(:get, MondialRelay.config.api_wsdl_url)
@@ -19,6 +27,6 @@ RSpec.describe MondialRelay::Response, '.for' do
   end
 
   it 'returns an api response' do
-    expect(subject).to eq('test')
+    expect(subject).to eq(stat: '0')
   end
 end

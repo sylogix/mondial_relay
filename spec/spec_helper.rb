@@ -3,7 +3,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'mondial_relay'
-require 'support/fixture'
 require 'support/factory_bot'
 require 'webmock/rspec'
 

@@ -8,7 +8,6 @@ RSpec.describe MondialRelay::Client do
   end
 
   describe '#call' do
-
     subject { client.call(request) }
 
     let(:request) { build(:request) }
