@@ -2,11 +2,15 @@
 
 require 'mondial_relay/version'
 require 'mondial_relay/configuration'
+require 'mondial_relay/status_codes'
+require 'mondial_relay/security_code'
+
 require 'mondial_relay/client'
 require 'mondial_relay/request'
 require 'mondial_relay/response'
+require 'mondial_relay/response_error'
+
 require 'mondial_relay/drop_off_points'
-require 'mondial_relay/security_code'
 
 module MondialRelay
   module_function
