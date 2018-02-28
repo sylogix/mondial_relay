@@ -4,8 +4,6 @@ require 'savon'
 
 module MondialRelay
   class Client
-    attr_reader :soap_client
-
     def initialize
       @soap_client = Savon.client(config)
     end
@@ -29,12 +27,16 @@ module MondialRelay
 
     def call(request)
       with_retry do
-        soap_client.call(
+        @soap_client.call(
           request.operation,
           message: request.message,
           attributes: request.attributes,
         )
       end
+    end
+
+    def operations
+      @soap_client.operations
     end
 
     private
