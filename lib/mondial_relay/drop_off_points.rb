@@ -44,18 +44,7 @@ module MondialRelay
     # Does the *drop-off* point search.
     # @param params [Hash] with the keys provided in a module description.
     #   Only mandatory fields **must** be included.
-    # @return [Hash] with a status and *drop-off* points' details.
-    #   Response example:
-    #   ```ruby
-    #   {
-    #     stat: '0',
-    #     points_relais: {
-    #       point_relais_details {
-    #         [...]
-    #       }
-    #     }
-    #   }
-    #   ```
+    # @return [Array<Hash>] an array with *drop-off* points details.
     #
     # @example
     #   MondialRelay::DropOffPoints.search(
