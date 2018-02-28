@@ -36,7 +36,7 @@ module MondialRelay
     end
 
     def operations
-      @soap_client.operations
+      with_retry { @soap_client.operations }
     end
 
     private
@@ -46,7 +46,7 @@ module MondialRelay
         begin
           return yield
         rescue Savon::Error, Net::OpenTimeout, Net::ReadTimeout => e
-          raise e if i + 1 == max_retries
+          raise ClientError.new(e.message) if i + 1 == max_retries
         end
       end
     end

@@ -13,7 +13,7 @@ module MondialRelay
       @secret_key = nil
 
       @api_timeout = 10
-      @api_max_retries = 1
+      @api_max_retries = 2
 
       @debug = false
     end
