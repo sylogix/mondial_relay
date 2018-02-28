@@ -22,11 +22,9 @@ RSpec.xdescribe MondialRelay::DropOffPoints, '.search' do
     %i[num cp pays latitude longitude]
   end
 
-  it 'is successful' do
-    expect { subject }.not_to raise_error
-  end
-
   it 'returns a valid response' do
+    expect { subject }.not_to raise_error
+
     expect(subject).to be_a(Array)
     expect(subject.first).to include(*drop_off_point_keys)
   end

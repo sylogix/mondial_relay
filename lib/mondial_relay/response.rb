@@ -16,7 +16,7 @@ module MondialRelay
     private
 
     def response_body
-      @response_body ||= response.body[response_key][result_key]
+      @response_body ||= response.body.dig(response_key, result_key)
     end
 
     def response
