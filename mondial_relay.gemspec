@@ -28,4 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.7'
   spec.add_development_dependency 'webmock', '~> 3.3'
   spec.add_development_dependency 'factory_bot', '~> 4.8'
+  spec.add_development_dependency 'yard', '~> 0.9'
+  spec.add_development_dependency 'redcarpet', '~> 3.4'
 end

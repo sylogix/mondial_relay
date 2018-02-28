@@ -10,18 +10,11 @@ RSpec.xdescribe MondialRelay::DropOffPoints, '.search' do
   let(:params) do
     {
       Pays: 'FR',
-      NumPointRelais: '',
-      Ville: '',
       CP: '75010',
-      Latitude: '',
-      Longitude: '',
-      Taille: '',
-      Poids: '',
-      Action: '',
+      Latitude: '48.8711706',
+      Longitude: '02.3602504',
       DelaiEnvoi: '0',
       RayonRecherche: '20',
-      TypeActivite: '',
-      NACE: '',
     }
   end
 
