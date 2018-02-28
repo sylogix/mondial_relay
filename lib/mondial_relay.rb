@@ -13,6 +13,7 @@ require 'mondial_relay/response_error'
 require 'mondial_relay/client_error'
 
 require 'mondial_relay/drop_off_points'
+require 'mondial_relay/shipments'
 require 'mondial_relay/labels'
 
 module MondialRelay

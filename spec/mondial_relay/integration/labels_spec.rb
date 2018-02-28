@@ -37,14 +37,13 @@ RSpec.xdescribe MondialRelay::Labels, '.create' do
     }
   end
 
-  let(:drop_off_point_keys) do
+  let(:label_keys) do
     %i[expedition_num url_etiquette]
   end
 
-
   it 'returns a valid response' do
     expect { subject }.not_to raise_error
-    expect(subject).to include(*drop_off_point_keys)
+    expect(subject).to include(*label_keys)
   end
 
   context 'when params are invalid' do
