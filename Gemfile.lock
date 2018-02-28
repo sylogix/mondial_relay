@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vinted-mondial_relay (0.0.1)
+    mondial_relay (0.0.1)
       interactor-initializer (~> 0.1)
       savon (~> 2.0)
 
@@ -84,10 +84,10 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   factory_bot (~> 4.8)
+  mondial_relay!
   rake (~> 12.3)
   redcarpet (~> 3.4)
   rspec (~> 3.7)
-  vinted-mondial_relay!
   webmock (~> 3.3)
   yard (~> 0.9)
 
