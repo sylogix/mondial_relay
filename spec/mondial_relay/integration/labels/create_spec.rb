@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.xdescribe MondialRelay::Labels, '.create' do
+RSpec.xdescribe MondialRelay::Labels::Create, '.for' do
   WebMock.allow_net_connect!(net_http_connect_on_start: true)
 
-  subject { described_class.create(params) }
+  subject { described_class.for(params) }
 
   let(:params) do
     {

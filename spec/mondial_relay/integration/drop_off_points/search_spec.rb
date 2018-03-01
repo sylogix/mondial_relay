@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.xdescribe MondialRelay::DropOffPoints, '.search' do
+RSpec.xdescribe MondialRelay::DropOffPoints::Search, '.for' do
   WebMock.allow_net_connect!(net_http_connect_on_start: true)
 
   let(:client) { build(:client) }
 
-  subject { described_class.search(params) }
+  subject { described_class.for(params) }
 
   let(:params) do
     {
