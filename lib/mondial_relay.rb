@@ -14,6 +14,7 @@ require 'mondial_relay/errors'
 require 'mondial_relay/drop_off_points/search'
 require 'mondial_relay/labels/create'
 require 'mondial_relay/shipments/create'
+require 'mondial_relay/shipments/trace'
 
 module MondialRelay
   module_function

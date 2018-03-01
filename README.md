@@ -12,8 +12,8 @@ is available.
 - ✅ `WSI3_PointRelais_Recherche`
 - ✅ `WSI2_CreationExpedition`
 - ✅ `WSI2_CreationEtiquette`
+- ✅ `WSI2_TracingColisDetaille`
 - ❌ `WSI2_RechercheCP`
-- ❌ `WSI2_TracingColisDetaille`
 - ❌ `WSI3_GetEtiquettes`
 - ❌ `WSI2_STAT_Label`
 
