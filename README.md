@@ -4,17 +4,14 @@
 
 The gem works as an interface to the
 [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx).
-As for this version only the *drop-off* point
-[search](https://api.mondialrelay.com/Web_Services.asmx?op=WSI3_PointRelais_Recherche)
-is available.
 
 ### Progress:
 - ✅ `WSI3_PointRelais_Recherche`
 - ✅ `WSI2_CreationExpedition`
 - ✅ `WSI2_CreationEtiquette`
 - ✅ `WSI2_TracingColisDetaille`
+- ✅ `WSI3_GetEtiquettes`
 - ❌ `WSI2_RechercheCP`
-- ❌ `WSI3_GetEtiquettes`
 - ❌ `WSI2_STAT_Label`
 
 ### Documentation
