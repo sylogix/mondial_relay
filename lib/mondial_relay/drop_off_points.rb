@@ -43,7 +43,7 @@ module MondialRelay
     #     Longitude: '02.3602504'
     #   )
     def search(params)
-      response = MondialRelay::Response.for(OPERATION, params)
+      response = MondialRelay::Query.run(OPERATION, params)
       response.dig(:points_relais, :point_relais_details) || []
     end
   end

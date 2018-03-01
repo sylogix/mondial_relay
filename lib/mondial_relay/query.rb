@@ -1,14 +1,18 @@
 # frozen_string_literal: true
-
-require 'interactor/initializer'
-
 module MondialRelay
-  class Response
-    include Interactor::Initializer
+  class Query
+    attr_reader :operation, :params
 
-    initialize_with :operation, :params
+    def self.run(operation, params)
+      new(operation, params).execute!
+    end
 
-    def run
+    def initialize(operation, params)
+      @operation = operation
+      @params = params
+    end
+
+    def execute!
       return response_body if status == '0'
       raise ResponseError.new(status)
     end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe MondialRelay::Response, '.for' do
-  subject { described_class.for(operation, params) }
+RSpec.describe MondialRelay::Query, '.run' do
+  subject { described_class.run(operation, params) }
 
   let(:client) { MondialRelay.client }
 

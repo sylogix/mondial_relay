@@ -106,7 +106,7 @@ module MondialRelay
     #     LIV_Rel: '006515',
     #   )
     def create(params)
-      MondialRelay::Response.for(OPERATION, params)
+      MondialRelay::Query.run(OPERATION, params)
     end
   end
 end

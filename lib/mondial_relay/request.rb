@@ -14,18 +14,18 @@ module MondialRelay
     end
 
     def message
-      merchant_id
+      merchant_id_params
         .merge(params)
-        .merge(security_code)
+        .merge(security_code_params)
     end
 
     private
 
-    def merchant_id
+    def merchant_id_params
       { Enseigne: MondialRelay.config.merchant_id }
     end
 
-    def security_code
+    def security_code_params
       { Security: SecurityCode.for(params.values) }
     end
   end

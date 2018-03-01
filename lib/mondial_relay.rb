@@ -7,7 +7,7 @@ require 'mondial_relay/security_code'
 
 require 'mondial_relay/client'
 require 'mondial_relay/request'
-require 'mondial_relay/response'
+require 'mondial_relay/query'
 
 require 'mondial_relay/errors'
 
