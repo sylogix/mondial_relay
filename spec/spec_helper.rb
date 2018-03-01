@@ -5,6 +5,7 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'mondial_relay'
 require 'support/factory_bot'
 require 'webmock/rspec'
+require 'mondial_relay/shared_examples/query'
 
 RSpec.configure do |config|
   config.before do
