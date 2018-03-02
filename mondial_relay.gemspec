@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Mondial Relay client'
   spec.description   = 'An interface for the Mondial Relay Web Service'
+  spec.homepage      = 'https://github.com/vinted/mondial_relay'
 
   spec.license       = 'MIT'
 
