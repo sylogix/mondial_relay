@@ -6,7 +6,7 @@ module MondialRelay
 
     def initialize(operation, params = {})
       @operation = operation
-      @params = params.reject { |_, val| val.size.zero? }
+      @params = params.reject { |_, val| val.to_s.size.zero? }
     end
 
     def attributes
