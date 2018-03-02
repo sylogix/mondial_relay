@@ -9,4 +9,6 @@ FactoryBot.define do
 
     initialize_with { new(operation, params) }
   end
+
+  factory :configuration, class: MondialRelay::Configuration do; end
 end

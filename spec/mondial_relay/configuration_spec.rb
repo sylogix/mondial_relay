@@ -12,22 +12,22 @@ RSpec.describe MondialRelay::Configuration, '#validate!' do
   end
 
   context 'when api_wsdl_url is missing' do
-    before { MondialRelay.config.api_wsdl_url = nil }
+    before { subject.api_wsdl_url = nil }
     it_behaves_like :argument_error
   end
 
   context 'when api_url is missing' do
-    before { MondialRelay.config.api_url = nil }
+    before { subject.api_url = nil }
     it_behaves_like :argument_error
   end
 
   context 'when merchant_id is missing' do
-    before { MondialRelay.config.merchant_id = nil }
+    before { subject.merchant_id = nil }
     it_behaves_like :argument_error
   end
 
   context 'when api_secret is missing' do
-    before { MondialRelay.config.api_secret = nil }
+    before { subject.api_secret = nil }
     it_behaves_like :argument_error
   end
 end

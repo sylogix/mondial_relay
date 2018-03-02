@@ -6,11 +6,11 @@ module MondialRelay
                   :api_secret, :api_timeout, :api_max_retries, :debug
 
     def initialize
-      @api_wsdl_url = nil
-      @api_url = nil
+      @api_wsdl_url = 'https://api.mondialrelay.com/Web_Services.asmx?WSDL'
+      @api_url = 'http://www.mondialrelay.fr/webservice/'
 
       @merchant_id = nil
-      @secret_key = nil
+      @api_secret = nil
 
       @api_timeout = 10
       @api_max_retries = 2
