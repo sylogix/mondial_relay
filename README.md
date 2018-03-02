@@ -1,6 +1,7 @@
 # Mondial Relay API client
 
 [![Build Status](https://travis-ci.org/vinted/mondial_relay.svg?branch=master)](https://travis-ci.org/vinted/mondial_relay)
+[![Gem Version](https://badge.fury.io/rb/mondial_relay.svg)](https://badge.fury.io/rb/mondial_relay)
 
 The gem works as an interface to the
 [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx).

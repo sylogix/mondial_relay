@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mondial_relay (0.1.0)
+    mondial_relay (0.1.1)
       interactor-initializer (~> 0.1)
       savon (~> 2.0)
 
