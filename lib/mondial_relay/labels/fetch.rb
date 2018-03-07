@@ -16,7 +16,7 @@ module MondialRelay
     # **NOTE**: all params must be provided in the order specified above.
     #
     # @example
-    #   # Create a shipment and return its number with a label url:
+    #   # Fetch labels of several sizes for provided shipments:
     #   MondialRelay::Labels::Fetch.for(
     #     Expeditions: '31236189;31236105',
     #     Langue: 'FR',

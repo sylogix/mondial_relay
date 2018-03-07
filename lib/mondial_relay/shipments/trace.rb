@@ -16,7 +16,7 @@ module MondialRelay
     # **NOTE**: all params must be provided in the order specified above.
     #
     # @example
-    #   # Create a shipment and return its number with a label url:
+    #   # Get the shipment details:
     #   MondialRelay::Shipments::Trace.for(
     #     Expedition: '31236105',
     #     Langue: 'FR',
