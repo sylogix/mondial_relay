@@ -13,7 +13,7 @@ module MondialRelay
     end
 
     def execute!
-      return response_body if status == '0'
+      return response_body if StatusCodes.success?(status)
       raise ResponseError.new(status)
     end
 

@@ -88,4 +88,16 @@ module MondialRelay
     '98' => 'Generic error (Incorrect parameters)',
     '99' => 'Generic error of service system (technical). Contact MR',
   }.freeze
+
+  module StatusCodes
+    module_function
+
+    def success?(status)
+      status == '0' || (80..83).include?(status.to_i)
+    end
+
+    def message_for(status)
+      STATUS_CODES[status] || 'Unknown status'
+    end
+  end
 end
