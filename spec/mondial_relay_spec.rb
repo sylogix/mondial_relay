@@ -31,24 +31,14 @@ RSpec.describe MondialRelay do
   end
 
   describe '.configure' do
-    subject do
-      described_class.configure do |config|
-        config.api_url = api_url
-      end
-    end
-
     let(:api_url) { 'new' }
 
-    it 'allows to set configuration' do
-      expect(subject.api_url).to eq(api_url)
+    before do
+      described_class.configure { |config| config.api_url = api_url }
     end
 
-    context 'when configuration is missing' do
-      let(:api_url) { nil }
-
-      it 'raises an error' do
-        expect {subject}.to raise_error(ArgumentError)
-      end
+    it 'allows to set configuration' do
+      expect(described_class.config.api_url).to eq(api_url)
     end
   end
 end

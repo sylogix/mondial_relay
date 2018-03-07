@@ -17,13 +17,5 @@ module MondialRelay
 
       @debug = false
     end
-
-    def validate!
-      raise ArgumentError, 'api wsd url not found' unless api_wsdl_url
-      raise ArgumentError, 'api url not found' unless api_url
-      raise ArgumentError, 'merchant not found' unless merchant_id
-      raise ArgumentError, 'api secret not found ' unless api_secret
-      self
-    end
   end
 end

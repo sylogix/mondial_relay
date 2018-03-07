@@ -32,7 +32,6 @@ module MondialRelay
 
   def configure
     yield(config)
-    config.validate!
   end
 
   def client
