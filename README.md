@@ -10,7 +10,7 @@ The gem works as an interface to the
 - ➕`WSI3_PointRelais_Recherche`;
 - ➕`WSI2_CreationExpedition`;
 - ➕`WSI2_CreationEtiquette`;
-- ➕`WSI2_TracingColisDetaille` (Not working properly right now because of the Web-Service issues);
+- ➕`WSI2_TracingColisDetaille`;
 - ➕`WSI3_GetEtiquettes`;
 - ➖`WSI2_RechercheCP`;
 - ➖`WSI2_STAT_Label`.
