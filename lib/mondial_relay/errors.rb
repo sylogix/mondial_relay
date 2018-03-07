@@ -7,6 +7,8 @@ module MondialRelay
 
   class TimeoutError < Error; end
 
+  class EncodingError < Error; end
+
   class ResponseError < Error
     def initialize(status)
       @status = status

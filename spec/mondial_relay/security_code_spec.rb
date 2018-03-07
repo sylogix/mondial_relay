@@ -12,12 +12,20 @@ RSpec.describe MondialRelay::SecurityCode, '.for' do
         MondialRelay::config.merchant_id,
         params.join,
         MondialRelay::config.api_secret
-    ].join
+    ].join.encode('windows-1252')
   end
 
   let(:expected_code) { Digest::MD5.hexdigest(params_for_digest).upcase }
 
   it 'generates a security code' do
     expect(subject).to eq(expected_code)
+  end
+
+  context 'with latin symbols' do
+    let(:params) { [ 'ùûüÿ€àâæçéèêëïîôœÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ—–»«”“’' ] }
+
+    it 'generates a security code' do
+      expect(subject).to eq(expected_code)
+    end
   end
 end

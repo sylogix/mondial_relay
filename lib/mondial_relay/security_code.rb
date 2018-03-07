@@ -20,7 +20,9 @@ module MondialRelay
         MondialRelay.config.merchant_id,
         params.join,
         MondialRelay.config.api_secret,
-      ].join
+      ].join.encode('windows-1252')
+    rescue Encoding::UndefinedConversionError
+      raise EncodingError
     end
   end
 end
