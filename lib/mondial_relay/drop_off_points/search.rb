@@ -48,8 +48,19 @@ module MondialRelay
 
       # @!visibility private
       def run
-        response = MondialRelay::Query.run(OPERATION, params)
+        response = MondialRelay::Query.run(OPERATION, sanitized_params)
         response.dig(:points_relais, :point_relais_details) || []
+      end
+
+      private
+
+      def sanitized_params
+        params.merge(sanitized_coordinates)
+      end
+
+      def sanitized_coordinates
+        coords = params.slice(:Latitude, :Longitude)
+        coords.each { |key, val| coords[key] = '%010.7f' % val&.to_f }
       end
     end
   end
