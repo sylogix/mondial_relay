@@ -28,6 +28,7 @@ module MondialRelay
     # - **RayonRecherche** — search radius (in km) *O*. Default 50.
     # - **TypeActivite** — trade type *O*.
     # - **NACE** — should not use *O*.
+    # - **NombreResultats** - number of results (max 30) *O*.
     #
     # **NOTE**: all params must be provided in the order specified above.
     #
@@ -42,7 +43,7 @@ module MondialRelay
     class Search
       include Interactor::Initializer
 
-      OPERATION = :wsi3_point_relais_recherche
+      OPERATION = :wsi4_point_relais_recherche
 
       initialize_with :params
 

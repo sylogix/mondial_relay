@@ -10,6 +10,7 @@ RSpec.xdescribe MondialRelay::DropOffPoints::Search, '.for' do
         Longitude: '02.3602504',
         DelaiEnvoi: '0',
         RayonRecherche: '20',
+        NombreResultats: 1,
       }
     end
 
