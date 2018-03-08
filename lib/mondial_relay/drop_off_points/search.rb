@@ -59,8 +59,8 @@ module MondialRelay
       end
 
       def sanitized_coordinates
-        coords = params.slice(:Latitude, :Longitude)
-        coords.each { |key, val| coords[key] = '%010.7f' % val&.to_f }
+        coords = params.slice(:Latitude, :Longitude).compact
+        coords.each { |key, val| coords[key] = '%010.7f' % val.to_f }
       end
     end
   end
