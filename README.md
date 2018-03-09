@@ -16,7 +16,7 @@ The gem works as an interface to the
 - ➖`WSI2_STAT_Label`.
 
 ### Usage
-Detailed usage examples and available options can be obtained in a gem's [docs](http://www.rubydoc.info/gems/mondial_relay/0.1.1).
+Detailed usage examples and available options can be obtained in a gem's [docs](http://www.rubydoc.info/gems/mondial_relay).
 
 #### Getting started
 A minimal gem's configuration is obtained by providing your credentials to the [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx):
@@ -57,7 +57,7 @@ MondialRelay::Labels::Fetch.for(
   Langue: 'FR',
 )
 ```
-See the [docs](http://www.rubydoc.info/gems/mondial_relay/0.1.1) for a detailed list of options.
+See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list of options.
 
 #### Shipments
 Create a shipment and return its number with some extra information:
@@ -78,7 +78,7 @@ MondialRelay::Shipments::Trace.for(
   Langue: 'FR',
 )
 ```
-See the [docs](http://www.rubydoc.info/gems/mondial_relay/0.1.1) for a detailed list of options.
+See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list of options.
 
 ### Documentation
 Documentation is generated using [Yard](https://yardoc.org/).
