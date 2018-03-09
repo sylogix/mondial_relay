@@ -37,7 +37,7 @@ MondialRelay::DropOffPoints::Search.for(
   Longitude: '02.3602504',
 )
 ```
-See the [docs](http://www.rubydoc.info/gems/mondial_relay/0.1.1) for a detailed list of search options.
+See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list of search options.
 
 #### Labels
 Create a shipment and return its number with a label url:
