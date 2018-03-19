@@ -7,7 +7,7 @@ Documentation:
 SignalException:
   EnforcedStyle: only_raise
 
-TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 
 TrailingCommaInArguments:

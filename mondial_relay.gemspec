@@ -37,4 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'factory_bot', '~> 4.8'
   spec.add_development_dependency 'yard', '~> 0.9'
   spec.add_development_dependency 'redcarpet', '~> 3.4'
+  spec.add_development_dependency 'pronto', '~> 0.9'
+  spec.add_development_dependency 'pronto-rubocop'
+  spec.add_development_dependency 'pronto-flay'
 end
