@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module MondialRelay
   class Query
     attr_reader :operation, :params
@@ -13,8 +14,12 @@ module MondialRelay
     end
 
     def execute!
-      return response_body if StatusCodes.success?(status)
-      raise ResponseError.new(status)
+      result = response_body
+
+      with_monitoring do
+        return result if StatusCodes.success?(status)
+        raise ResponseError, status
+      end
     end
 
     private
@@ -41,6 +46,19 @@ module MondialRelay
 
     def status
       @status ||= response_body[:stat]
+    end
+
+    def with_monitoring
+      MondialRelay.monitor(monitorable_data)
+      yield
+    end
+
+    def monitorable_data
+      {
+        request: request,
+        response_body: response_body,
+        status: status,
+      }
     end
   end
 end

@@ -10,7 +10,6 @@ require 'mondial_relay/client'
 require 'mondial_relay/request'
 require 'mondial_relay/query'
 
-
 require 'mondial_relay/drop_off_points/search'
 
 require 'mondial_relay/labels/create'
@@ -36,5 +35,10 @@ module MondialRelay
 
   def client
     @client ||= Client.new
+  end
+
+  def monitor(monitorable)
+    return unless config.monitor.respond_to?(:call)
+    config.monitor.call(monitorable)
   end
 end

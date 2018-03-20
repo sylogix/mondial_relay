@@ -41,4 +41,20 @@ RSpec.describe MondialRelay do
       expect(described_class.config.api_url).to eq(api_url)
     end
   end
+
+  describe '.monitor' do
+    subject { described_class.monitor(data) }
+
+    let(:monitor) { ->(data) { print data[:attr] } }
+    let(:data) { { attr: result } }
+    let(:result) { 'attr' }
+
+    before do
+      allow(described_class.config).to receive(:monitor).and_return(monitor)
+    end
+
+    it 'runs a monitor callback' do
+      expect { subject }.to output(result).to_stdout
+    end
+  end
 end

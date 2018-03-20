@@ -2,8 +2,8 @@
 
 module MondialRelay
   class Configuration
-    attr_accessor :api_wsdl_url, :api_url, :merchant_id,
-                  :api_secret, :api_timeout, :api_max_retries, :debug
+    attr_accessor :api_wsdl_url, :api_url, :merchant_id, :api_secret,
+      :api_timeout, :api_max_retries, :debug, :monitor
 
     def initialize
       @api_wsdl_url = 'https://api.mondialrelay.com/Web_Services.asmx?WSDL'
@@ -16,6 +16,8 @@ module MondialRelay
       @api_max_retries = 2
 
       @debug = false
+
+      @monitor = nil
     end
   end
 end
