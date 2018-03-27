@@ -45,7 +45,7 @@ module MondialRelay
     end
 
     def status
-      @status ||= response_body[:stat]
+      response_body[:stat]&.to_i
     end
 
     def with_monitoring

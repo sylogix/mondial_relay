@@ -6,7 +6,7 @@ RSpec.describe MondialRelay::StatusCodes do
     subject { described_class.success?(status) }
 
     context 'on success' do
-      let(:status) { '0' }
+      let(:status) { 0 }
 
       it 'returns true' do
         expect(subject).to be_truthy
@@ -14,7 +14,7 @@ RSpec.describe MondialRelay::StatusCodes do
     end
 
     context 'on failure' do
-      let(:status) { '99' }
+      let(:status) { 99 }
 
       it 'returns false' do
         expect(subject).to be_falsey
@@ -22,7 +22,7 @@ RSpec.describe MondialRelay::StatusCodes do
     end
 
     context 'on tracking code' do
-      let(:status) { '80' }
+      let(:status) { 80 }
 
       it 'returns true' do
         expect(subject).to be_truthy
@@ -31,7 +31,7 @@ RSpec.describe MondialRelay::StatusCodes do
   end
 
   describe '.message_for' do
-    let(:status) { '0' }
+    let(:status) { 0 }
 
     subject { described_class.message_for(status) }
 
