@@ -100,12 +100,8 @@ module MondialRelay
     #       string: 'bar code',
     #     },
     #   }
-    class Create
-      include Interactor::Initializer
-
+    class Create < Operation
       OPERATION = :wsi2_creation_expedition
-
-      initialize_with :params
 
       # @!visibility private
       def run

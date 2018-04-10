@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'interactor/initializer'
-
 module MondialRelay
   module Shipments
     # An interface for *shipment* tracing.
@@ -37,12 +35,9 @@ module MondialRelay
     #     tracing_relais: 'tracking point id',
     #     tracing_pays: 'tracing country',
     #   }
-    class Trace
-      include Interactor::Initializer
+    class Trace < Operation
 
       OPERATION = :wsi2_tracing_colis_detaille
-
-      initialize_with :params
 
       # @!visibility private
       def run

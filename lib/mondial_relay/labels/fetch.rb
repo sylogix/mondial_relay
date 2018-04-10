@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'interactor/initializer'
-
 module MondialRelay
   module Labels
     # An interface for *labels* fetching.
@@ -29,12 +27,8 @@ module MondialRelay
     #     url_pdf_a5: '',
     #     url_pdf_10x15: '',
     #   }
-    class Fetch
-      include Interactor::Initializer
-
+    class Fetch < Operation
       OPERATION = :wsi3_get_etiquettes
-
-      initialize_with :params
 
       # @!visibility private
       def run

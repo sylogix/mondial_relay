@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'interactor/initializer'
-
 module MondialRelay
   module Labels
     # An interface for *label* creation.
@@ -95,12 +93,8 @@ module MondialRelay
     #     expedition_num: 'shipment number',
     #     url_etiquette: 'A4 label url',
     #   }
-    class Create
-      include Interactor::Initializer
-
+    class Create < Operation
       OPERATION = :wsi2_creation_etiquette
-
-      initialize_with :params
 
       # @!visibility private
       def run

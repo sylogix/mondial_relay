@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'interactor/initializer'
-
 module MondialRelay
   module DropOffPoints
     # An interface for *drop-off* point search.
@@ -40,12 +38,8 @@ module MondialRelay
     #     Latitude: '48.8711706',
     #     Longitude: '02.3602504'
     #   )
-    class Search
-      include Interactor::Initializer
-
+    class Search < Operation
       OPERATION = :wsi4_point_relais_recherche
-
-      initialize_with :params
 
       # @!visibility private
       def run
