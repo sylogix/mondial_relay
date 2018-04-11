@@ -12,5 +12,11 @@ module MondialRelay
     def run
       raise NotImplementedError
     end
+
+    private
+
+    def preprocessed_params
+      self.class::PreprocessParams.for(params)
+    end
   end
 end
