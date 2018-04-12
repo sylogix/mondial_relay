@@ -8,6 +8,8 @@ module MondialRelay
           shipmet_numbers: :Expeditions,
           language: :Langue,
         }.freeze
+
+        RESPONSE = {}.freeze
       end
     end
   end

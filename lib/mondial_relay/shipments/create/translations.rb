@@ -59,6 +59,8 @@ module MondialRelay
           instructions: :Instructions,
           text: :Texte,
         }.freeze
+
+        RESPONSE = {}.freeze
       end
     end
   end

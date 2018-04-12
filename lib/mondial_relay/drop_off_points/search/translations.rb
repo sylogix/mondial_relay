@@ -20,6 +20,28 @@ module MondialRelay
           nance: :NACE,
           number_of_results: :NombreResultats,
         }.freeze
+
+        RESPONSE = {
+          num: :id,
+          lg_adr1: :name,
+          lg_adr2: :name_additional,
+          lg_adr3: :address,
+          lg_adr4: :address_additional,
+          cp: :postal_code,
+          ville: :city,
+          pays: :country,
+          localisation1: :extra_information,
+          localisation2: :extra_information_additional,
+          type_activite: :trade_type,
+          horaires_lundi: :monday_work_hours,
+          horaires_mardi: :tuesday_work_hours,
+          horaires_mercredi: :wednesday_work_hours,
+          horaires_jeudi: :thursday_work_hours,
+          horaires_vendredi: :friday_work_hours,
+          horaires_samedi: :saturday_work_hours,
+          horaires_dimanche: :sunday_work_hours,
+          informations_dispo: :holiday_information,
+        }.freeze
       end
     end
   end
