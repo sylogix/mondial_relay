@@ -21,7 +21,7 @@ module MondialRelay
         end
 
         def coordinates
-          params.slice(:Latitude, :Longitude).compact
+          params.slice(:latitude, :longitude).compact
         end
       end
     end

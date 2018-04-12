@@ -3,8 +3,8 @@
 module MondialRelay
   module DropOffPoints
     # An interface for *drop-off* point search.
-    # Requests the {https://api.mondialrelay.com/Web_Services.asmx?op=WSI3_PointRelais_Recherche
-    # WSI3_PointRelais_Recherche} endpoint.
+    # Requests the {https://api.mondialrelay.com/Web_Services.asmx?op=WSI4_PointRelais_Recherche
+    # WSI4_PointRelais_Recherche} endpoint.
     #
     # Available search params (*M* — mandatory, *O* — optional):
     #

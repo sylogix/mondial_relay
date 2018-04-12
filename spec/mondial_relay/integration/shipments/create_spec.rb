@@ -4,28 +4,32 @@ RSpec.xdescribe MondialRelay::Shipments::Create, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        ModeCol: 'REL',
-        ModeLiv: '24R',
-        Expe_Langage: 'FR',
-        Expe_Ad1: 'Test Sender',
-        Expe_Ad3: '38 Route de Rennes',
-        Expe_Ville: 'Nantes',
-        Expe_CP: '44300',
-        Expe_Pays: 'FR',
-        Expe_Tel1: '+3300000000',
-        Dest_Langage: 'FR',
-        Dest_Ad1: 'Test Consignee',
-        Dest_Ad3: 'Bouwhandelstraat 94-138',
-        Dest_Ville: 'Antwerpen',
-        Dest_CP: '2140',
-        Dest_Pays: 'BE',
-        Poids: '500',
-        NbColis: '1',
-        CRT_Valeur: '30',
-        COL_Rel_Pays: 'FR',
-        COL_Rel: '094170',
-        LIV_Rel_Pays: 'BE',
-        LIV_Rel: '006515',
+        collection_mode: 'REL',
+        delivery_mode: '24R',
+
+        sender_language: 'FR',
+        sender_name: 'Test Sender',
+        sender_address: '38 Route de Rennes',
+        sender_city: 'Nantes',
+        sender_postal_code: '44300',
+        sender_country: 'FR',
+        sender_phone_number: '+3300000000',
+
+        receiver_language: 'FR',
+        receiver_name: 'Test Receiver',
+        receiver_address: 'Bouwhandelstraat 94-138',
+        receiver_city: 'Antwerpen',
+        receiver_postal_code: '2140',
+        receiver_country: 'BE',
+
+        parcel_weight: 500,
+        parcel_count: 1,
+        cod_price: 0,
+
+        collection_country: 'FR',
+        collection_drop_off_point_id: '094170',
+        delivery_country: 'BE',
+        delivery_drop_off_point_id: '006515',
       }
     end
 

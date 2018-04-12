@@ -3,7 +3,10 @@
 RSpec.xdescribe MondialRelay::Labels::Fetch, '.for' do
   it_behaves_like :query do
     let(:params) do
-      { Expeditions: '31236189', Langue: 'FR' }
+      {
+        shipmet_numbers: '31236189',
+        language: 'FR',
+      }
     end
 
     let(:response_keys) do

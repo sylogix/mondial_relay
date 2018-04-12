@@ -11,15 +11,23 @@ require 'mondial_relay/request'
 require 'mondial_relay/query'
 
 require 'mondial_relay/operation'
+require 'mondial_relay/translatable'
 
 require 'mondial_relay/drop_off_points/search'
 require 'mondial_relay/drop_off_points/search/preprocess_params'
+require 'mondial_relay/drop_off_points/search/translations'
 
 require 'mondial_relay/labels/create'
+require 'mondial_relay/labels/create/translations'
+
 require 'mondial_relay/labels/fetch'
+require 'mondial_relay/labels/fetch/translations'
 
 require 'mondial_relay/shipments/create'
+require 'mondial_relay/shipments/create/translations'
+
 require 'mondial_relay/shipments/trace'
+require 'mondial_relay/shipments/trace/translations'
 
 module MondialRelay
   module_function

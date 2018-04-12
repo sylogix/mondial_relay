@@ -98,7 +98,7 @@ module MondialRelay
 
       # @!visibility private
       def run
-        MondialRelay::Query.run(OPERATION, params)
+        MondialRelay::Query.run(OPERATION, translated_params)
       end
     end
   end

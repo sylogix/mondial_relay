@@ -3,7 +3,10 @@
 RSpec.xdescribe MondialRelay::Shipments::Trace, '.for' do
   it_behaves_like :query do
     let(:params) do
-      { Expedition: '31236189', Langue: 'FR' }
+      {
+        shipment_number: '31236189',
+        language: 'FR',
+      }
     end
 
     let(:response_keys) do

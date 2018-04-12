@@ -20,7 +20,7 @@ RSpec.describe MondialRelay do
   describe '.reset' do
     subject { described_class.reset }
 
-    let (:config) { build(:configuration) }
+    let(:config) { build(:configuration) }
 
     it 'resets a configuration' do
       expect(subject.api_wsdl_url).to eq(config.api_wsdl_url)

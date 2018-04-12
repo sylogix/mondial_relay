@@ -5,18 +5,13 @@ RSpec.describe MondialRelay::DropOffPoints::Search, '.for' do
 
   let(:params) do
     {
-      Pays: 'FR',
-      Latitude: latitude,
-      Longitude: longitude,
-      DelaiEnvoi: '0',
-      RayonRecherche: '20',
+      country: 'FR',
+      latitude: '48.8711706',
+      longitude: '02.3602504',
     }
   end
 
-  let(:latitude) { '48.8711706' }
-  let(:longitude) { '02.3602504' }
-
-  let (:query_result) do
+  let(:query_result) do
     {
       points_relais: {
         point_relais_details: drop_off_points,
@@ -29,11 +24,9 @@ RSpec.describe MondialRelay::DropOffPoints::Search, '.for' do
   before do
     expect(MondialRelay::Query)
       .to(receive(:run))
-      .with(MondialRelay::DropOffPoints::Search::OPERATION, Hash)
+      .with(described_class::OPERATION, Hash)
       .and_return(query_result)
   end
 
-  it 'returns a list of drop off points' do
-    expect(subject).to eq(drop_off_points)
-  end
+  it { is_expected.to eq(drop_off_points) }
 end

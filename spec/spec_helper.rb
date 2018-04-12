@@ -6,6 +6,7 @@ require 'mondial_relay'
 require 'support/factory_bot'
 require 'webmock/rspec'
 require 'mondial_relay/shared_examples/query'
+require 'mondial_relay/shared_examples/translatable'
 
 RSpec.configure do |config|
   config.before do

@@ -4,13 +4,13 @@ RSpec.xdescribe MondialRelay::DropOffPoints::Search, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        Pays: 'FR',
-        CP: '75010',
-        Latitude: '48.8711706',
-        Longitude: '02.3602504',
-        DelaiEnvoi: '0',
-        RayonRecherche: '20',
-        NombreResultats: 1,
+        country: 'FR',
+        postal_code: '75010',
+        latitude: '48.8711706',
+        longitude: '02.3602504',
+        lead_time: '0',
+        search_radius: '20',
+        number_of_results: 1,
       }
     end
 

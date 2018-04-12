@@ -5,16 +5,16 @@ RSpec.describe MondialRelay::DropOffPoints::Search::PreprocessParams, '.for' do
 
   let(:params) do
     {
-      Latitude: '40.23',
-      Longitude: '2.123349492',
+      latitude: '40.23',
+      longitude: '2.123349492',
       test: 'test',
     }
   end
 
   let(:preprocessed) do
     {
-      Latitude: '40.2300000',
-      Longitude: '02.1233495',
+      latitude: '40.2300000',
+      longitude: '02.1233495',
       test: 'test',
     }
   end
