@@ -7,7 +7,7 @@ RSpec.shared_examples :translatable do
   let(:data) { described_class::Translations::PARAMS }
 
   describe '#translated_params' do
-    subject { operation.translated_params }
+    subject { operation.translate_params(params) }
 
     let(:translated_params) do
       { nested: Hash[data.map { |_, val| [val, val] }] }
@@ -21,7 +21,7 @@ RSpec.shared_examples :translatable do
   end
 
   describe '#translated_response' do
-    subject { operation.translated_response }
+    subject { operation.translate_response(response) }
 
     let(:data) { described_class::Translations::RESPONSE }
 
@@ -31,10 +31,6 @@ RSpec.shared_examples :translatable do
 
     let(:translated_response) do
       { nested: [Hash[data.map { |_, val| [val, val] }]] }
-    end
-
-    before do
-      expect(operation).to receive(:response).and_return(response)
     end
 
     it { is_expected.to eq(translated_response) }

@@ -5,7 +5,7 @@ require 'interactor/initializer'
 module MondialRelay
   module DropOffPoints
     class Search
-      class PreprocessParams
+      class FormatParams
         include Interactor::Initializer
 
         initialize_with :params

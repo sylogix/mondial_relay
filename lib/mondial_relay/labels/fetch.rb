@@ -28,12 +28,7 @@ module MondialRelay
     #     url_pdf_10x15: '',
     #   }
     class Fetch < Operation
-      OPERATION = :wsi3_get_etiquettes
-
-      # @!visibility private
-      def run
-        MondialRelay::Query.run(OPERATION, translated_params)
-      end
+      operation_name :wsi3_get_etiquettes
     end
   end
 end

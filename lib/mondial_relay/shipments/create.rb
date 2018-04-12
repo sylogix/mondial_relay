@@ -101,12 +101,7 @@ module MondialRelay
     #     },
     #   }
     class Create < Operation
-      OPERATION = :wsi2_creation_expedition
-
-      # @!visibility private
-      def run
-        MondialRelay::Query.run(OPERATION, translated_params)
-      end
+      operation_name :wsi2_creation_expedition
     end
   end
 end

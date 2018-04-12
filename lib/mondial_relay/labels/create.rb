@@ -94,12 +94,7 @@ module MondialRelay
     #     url_etiquette: 'A4 label url',
     #   }
     class Create < Operation
-      OPERATION = :wsi2_creation_etiquette
-
-      # @!visibility private
-      def run
-        MondialRelay::Query.run(OPERATION, translated_params)
-      end
+      operation_name :wsi2_creation_etiquette
     end
   end
 end

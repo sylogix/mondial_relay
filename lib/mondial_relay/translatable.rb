@@ -4,13 +4,13 @@ require 'active_support/core_ext/object/deep_dup'
 
 module MondialRelay
   module Translatable
-    def translated_params
+    def translate_params(params)
       translate_object_keys!(params.deep_dup) do |key|
         translate_param_key(key)
       end
     end
 
-    def translated_response
+    def translate_response(response)
       translate_object_keys!(response.deep_dup) do |key|
         translate_response_key(key)
       end

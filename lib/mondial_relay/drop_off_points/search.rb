@@ -39,13 +39,7 @@ module MondialRelay
     #     Longitude: '02.3602504'
     #   )
     class Search < Operation
-      OPERATION = :wsi4_point_relais_recherche
-
-      # @!visibility private
-      def run
-        response = MondialRelay::Query.run(OPERATION, preprocessed_params)
-        response.dig(:points_relais, :point_relais_details) || []
-      end
+      operation_name :wsi4_point_relais_recherche
     end
   end
 end

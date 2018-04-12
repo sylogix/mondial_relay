@@ -12,9 +12,11 @@ require 'mondial_relay/query'
 
 require 'mondial_relay/operation'
 require 'mondial_relay/translatable'
+require 'mondial_relay/formattable'
 
 require 'mondial_relay/drop_off_points/search'
-require 'mondial_relay/drop_off_points/search/preprocess_params'
+require 'mondial_relay/drop_off_points/search/format_params'
+require 'mondial_relay/drop_off_points/search/format_response'
 require 'mondial_relay/drop_off_points/search/translations'
 
 require 'mondial_relay/labels/create'

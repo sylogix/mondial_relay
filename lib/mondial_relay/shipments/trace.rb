@@ -36,13 +36,7 @@ module MondialRelay
     #     tracing_pays: 'tracing country',
     #   }
     class Trace < Operation
-
-      OPERATION = :wsi2_tracing_colis_detaille
-
-      # @!visibility private
-      def run
-        MondialRelay::Query.run(OPERATION, translated_params)
-      end
+      operation_name :wsi2_tracing_colis_detaille
     end
   end
 end

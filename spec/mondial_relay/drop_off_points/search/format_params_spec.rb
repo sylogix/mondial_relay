@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe MondialRelay::DropOffPoints::Search::PreprocessParams, '.for' do
+RSpec.describe MondialRelay::DropOffPoints::Search::FormatParams, '.for' do
   subject { described_class.for(params) }
 
   let(:params) do
