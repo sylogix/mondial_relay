@@ -5,4 +5,4 @@ rvm:
 before_install:
 - gem install bundler -v 1.16.1
 after_success:
-- export PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} && bundle exec pronto run -f github_pr
+- export PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} && bundle exec pronto run -f github_pr
