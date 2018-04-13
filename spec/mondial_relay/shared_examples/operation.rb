@@ -8,12 +8,12 @@ RSpec.shared_examples :operation do
 
   before do
     if defined?(described_class::FormatParams)
-      allow(described_class::FormatParams)
+      expect(described_class::FormatParams)
         .to receive(:for).and_return(params)
     end
 
     if defined?(described_class::FormatResponse)
-      allow(described_class::FormatResponse)
+      expect(described_class::FormatResponse)
         .to receive(:for).and_return(response)
     end
 

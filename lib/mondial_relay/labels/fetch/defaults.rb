@@ -3,13 +3,11 @@
 module MondialRelay
   module Labels
     class Fetch
-      module Translations
+      module Defaults
         PARAMS = {
-          shipment_numbers: :Expeditions,
-          language: :Langue,
+          shipment_numbers: nil,
+          language: 'FR',
         }.freeze
-
-        RESPONSE = {}.freeze
       end
     end
   end
