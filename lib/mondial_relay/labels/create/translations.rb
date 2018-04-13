@@ -3,7 +3,7 @@
 module MondialRelay
   module Labels
     class Create
-      class Translations
+      module Translations
         PARAMS = {
           collection_mode: :ModeCol,
           delivery_mode: :ModeLiv,

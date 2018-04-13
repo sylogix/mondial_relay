@@ -3,7 +3,7 @@
 module MondialRelay
   module DropOffPoints
     class Search
-      class Translations
+      module Translations
         PARAMS = {
           country: :Pays,
           drop_off_point_id: :NumPointRelais,

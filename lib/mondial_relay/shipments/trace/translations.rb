@@ -3,7 +3,7 @@
 module MondialRelay
   module Shipments
     class Trace
-      class Translations
+      module Translations
         PARAMS = {
           shipment_number: :Expedition,
           language: :Langue,

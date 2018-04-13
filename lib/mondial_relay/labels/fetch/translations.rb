@@ -3,7 +3,7 @@
 module MondialRelay
   module Labels
     class Fetch
-      class Translations
+      module Translations
         PARAMS = {
           shipmet_numbers: :Expeditions,
           language: :Langue,
