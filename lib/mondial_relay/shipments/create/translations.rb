@@ -67,7 +67,7 @@ module MondialRelay
           tri_navette: :shuttle_run_number,
           tri_agence: :agency,
           tri_tournee_code: :delivery_run,
-          tri_livraison_mode: :mode_of_delivery,
+          tri_livraison_mode: :delivery_mode,
           codes_barres: :bar_codes,
         }.freeze
       end

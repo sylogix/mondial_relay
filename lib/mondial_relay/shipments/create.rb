@@ -8,95 +8,90 @@ module MondialRelay
     #
     # Available creation params (*M* — mandatory, *O* — optional):
     #
-    # - **ModeCol** — collection mode `^(CCC|CDR|CDS|REL)$` *M*.
-    # - **ModeLiv** — delivery mode `^(LCC|LD1|LDS|24R|24L|24X|24C|ESP|DRI)$` *M*.
-    # - **NDossier** — merchant shipment reference (e.g invoice number) *O*.
-    # - **NClient** — consignee reference *O*.
-    # - **Expe_Langage** — sender's language *M*.
-    # - **Expe_Ad1** — sender's particulars, name, first name *M*.
-    # - **Expe_Ad2** — sender's other name information *O*.
-    # - **Expe_Ad3** — sender's street *M*.
-    # - **Expe_Ad4** — sender's extra address information *O*.
-    # - **Expe_Ville** — sender's city *M*.
-    # - **Expe_CP** — sender's zip code *M*.
-    # - **Expe_Pays** — sender's country code (ISO) *M*.
-    # - **Expe_Tel1** — sender's phone number *M*.
-    # - **Expe_Tel2** — sender's cell number *O*.
-    # - **Expe_Mail** — sender's email address *O*.
-    # - **Dest_Langage** — consignee's language *M*.
-    # - **Dest_Ad1** — consignee's particulars, name, first name *M*.
-    # - **Dest_Ad2** — consignee's other name information *O*.
-    # - **Dest_Ad3** — consignee's street *M*.
-    # - **Dest_Ad4** — consignee's extra address information *O*.
-    # - **Dest_Ville** — consignee's city *M*.
-    # - **Dest_CP** — consignee's zip code *M*.
-    # - **Dest_Pays** — consignee's country code (ISO) *M*.
-    # - **Dest_Tel1** — consignee's phone number (obligatory for home delivery) *O/M*.
-    # - **Dest_Tel2** — consignee's cell phone *O*.
-    # - **Dest_Mail** — consignee's email address *O*.
-    # - **Poids** — weight (in grams) *M*.
-    # - **Longueur** — length (in cm) *O*.
-    # - **Taille** — leave empty *O*.
-    # - **NbColis** — number of parcels in shipment *M*.
-    # - **CRT_Valeur** — COD shipment value (in cents) *M*.
-    # - **CRT_Devise** — currency of COD value (EUR) *O*.
-    # - **Exp_Valeur** — shipment value (in cents) *O*.
-    # - **Exp_Devise** — currency of shipment value (EUR) *O*.
-    # - **COL_Rel_Pays** — pickup point country code (ISO) *O/M*.
+    # - **collection_mode** — collection mode `^(CCC|CDR|CDS|REL)$` *M*.
+    # - **delivery_mode** — delivery mode `^(LCC|LD1|LDS|24R|24L|24X|24C|ESP|DRI)$` *M*.
+    # - **shipment_reference** — merchant shipment reference (e.g invoice number) *O*.
+    # - **sender_reference** — sender's reference *O*.
+    # - **sender_language** — sender's language *M*.
+    # - **sender_name** — sender's particulars, name, first name *M*.
+    # - **sender_name_additional** — sender's other name information *O*.
+    # - **sender_address** — sender's street *M*.
+    # - **sender_address_additional** — sender's extra address information *O*.
+    # - **sender_city** — sender's city *M*.
+    # - **sender_postal_code** — sender's zip code *M*.
+    # - **sender_country** — sender's country code (ISO) *M*.
+    # - **sender_phone_number** — sender's phone number *M*.
+    # - **sender_mobile_number** — sender's cell number *O*.
+    # - **sender_email** — sender's email address *O*.
+    # - **receiver_language** — consignee's language *M*.
+    # - **receiver_name** — consignee's particulars, name, first name *M*.
+    # - **receiver_name_additional** — consignee's other name information *O*.
+    # - **receiver_address** — consignee's street *M*.
+    # - **receiver_address_additional** — consignee's extra address information *O*.
+    # - **receiver_city** — consignee's city *M*.
+    # - **receiver_postal_code** — consignee's zip code *M*.
+    # - **receiver_country** — consignee's country code (ISO) *M*.
+    # - **receiver_phone_number** — consignee's phone number (obligatory for home delivery) *O/M*.
+    # - **receiver_mobile_number** — consignee's cell phone *O*.
+    # - **receiver_email** — consignee's email address *O*.
+    # - **parcel_weight** — weight (in grams) *M*.
+    # - **parcel_length** — length (in cm) *O*.
+    # - **parcel_size** — leave empty *O*.
+    # - **parcel_count** — number of parcels in shipment *M*.
+    # - **cod_price** — COD shipment value (in cents) *M*.
+    # - **cod_price_currency** — currency of COD value (EUR) *O*.
+    # - **price** — shipment value (in cents) *O*.
+    # - **currency** — currency of shipment value (EUR) *O*.
+    # - **collection_country** — pickup point country code (ISO) *O/M*.
     #   Obligatory if collected at Point Relais.
-    # - **COL_Rel** — pickup point ID *O/M*.
+    # - **collection_drop_off_point_id** — pickup point ID *O/M*.
     #   Obligatory if collected at Point Relais.
-    # - **LIV_Rel_Pays** — drop-off point country code (ISO) *O/M*.
+    # - **delivery_country** — drop-off point country code (ISO) *O/M*.
     #   Obligatory if delivered at Point Relais.
-    # - **LIV_Rel** — drop-off point ID *O/M*.
+    # - **delivery_drop_off_point_id** — drop-off point ID *O/M*.
     #   Obligatory if delivered at Point Relais.
-    # - **TAvisage** — notification request for shipment `^(|O|N)$` *O*.
-    # - **TReprise** — `^(|O|N)$` *O*.
-    # - **Montage** — assembly time *O*. Zero by default.
-    # - **TRDV** — request for delivery appointment `^(|O|N)$` *O*.
-    # - **Assurance** — insurance coverage *O*. Zero by default.
-    # - **Instructions** — extra information *O*.
-    #
-    # **NOTE**: all params must be provided in the order specified above.
+    # - **notify** — notification request for shipment `^(|O|N)$` *O*.
+    # - **reprise** — `^(|O|N)$` *O*.
+    # - **assembly_time** — assembly time *O*. Zero by default.
+    # - **request_for_delivery_appointment** — request for delivery appointment `^(|O|N)$` *O*.
+    # - **assurance** — insurance coverage *O*. Zero by default.
+    # - **instructions** — extra information *O*.
+    # - **text** — DO NOT use for security code calculation *O*.
     #
     # @example
-    #   # Create a shipment and return its number with some extra information:
+    #   # Create a shipment and returns its number with a label url:
     #   MondialRelay::Shipments::Create.for(
-    #     ModeCol: 'REL',
-    #     ModeLiv: '24R',
-    #     Expe_Langage: 'FR',
-    #     Expe_Ad1: 'Test Sender',
-    #     Expe_Ad3: '38 Route de Rennes',
-    #     Expe_Ville: 'Nantes',
-    #     Expe_CP: '44300',
-    #     Expe_Pays: 'FR',
-    #     Expe_Tel1: '+3300000000',
-    #     Dest_Langage: 'FR',
-    #     Dest_Ad1: 'Test Consignee',
-    #     Dest_Ad3: 'Bouwhandelstraat 94-138',
-    #     Dest_Ville: 'Antwerpen',
-    #     Dest_CP: '2140',
-    #     Dest_Pays: 'BE',
-    #     Poids: '500',
-    #     NbColis: '1',
-    #     CRT_Valeur: '30',
-    #     COL_Rel_Pays: 'FR',
-    #     COL_Rel: '094170',
-    #     LIV_Rel_Pays: 'BE',
-    #     LIV_Rel: '006515',
+    #     sender_name: 'Test Sender',
+    #     sender_address: '38 Route de Rennes',
+    #     sender_city: 'Nantes',
+    #     sender_postal_code: '44300',
+    #     sender_country: 'FR',
+    #     sender_phone_number: '+3300000000',
+    #
+    #     receiver_name: 'Test Receiver',
+    #     receiver_address: 'Bouwhandelstraat 94-138',
+    #     receiver_city: 'Antwerpen',
+    #     receiver_postal_code: '2140',
+    #     receiver_country: 'BE',
+    #
+    #     parcel_weight: 500,
+    #     collection_country: 'FR',
+    #     collection_drop_off_point_id: '094170',
+    #     delivery_country: 'BE',
+    #     delivery_drop_off_point_id: '006515',
     #   )
     #
     #   # Results in:
     #   {
     #     stat: '0',
-    #     expedition_num: 'shipment number',
-    #     tri_agence_code: 'agency code',
-    #     tri_groupe: 'sorting group number',
-    #     tri_navette: 'shuttle run number',
-    #     tri_agence: 'agency name',
-    #     tri_tournee_code: 'delivery run',
-    #     tri_livraison_mode: 'delivery mode',
-    #     codes_barres: {
+    #     shipment_number: 'shipment number',
+    #     agency_code: 'agency code',
+    #     group: 'sorting group number',
+    #     shuttle_run_number: 'shuttle run number',
+    #     agency: 'agency name',
+    #     delivery_run: 'delivery run',
+    #     delivery_mode: 'delivery mode',
+    #     bar_codes: {
     #       string: 'bar code',
     #     },
     #   }

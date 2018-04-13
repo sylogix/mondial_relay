@@ -8,32 +8,36 @@ module MondialRelay
     #
     # Available tracing params (*M* — mandatory, *O* — optional):
     #
-    # - **Expedition** — shipment number *M*.
-    # - **Langue** — language *M*.
-    #
-    # **NOTE**: all params must be provided in the order specified above.
+    # - **shipment_number** — shipment number *M*.
+    # - **language** — language *M*.
     #
     # @example
     #   # Get the shipment details:
     #   MondialRelay::Shipments::Trace.for(
-    #     Expedition: '31236105',
-    #     Langue: 'FR',
+    #     shipment_number: '31236105',
+    #     language: 'FR',
     #   )
     #
     #   # Results in:
     #   {
     #     stat: '0',
-    #     libelle01: 'name',
-    #     relais_libelle: 'point name',
-    #     relais_num: 'point id',
-    #     libelle02: 'extra information',
-    #     tracing: 'tracking table',
-    #     tracing_libelle: 'tracing name',
-    #     tracing_date: 'tracing date',
-    #     tracing_heure: 'tracing hour',
-    #     tracing_lieu: 'tracing city',
-    #     tracing_relais: 'tracking point id',
-    #     tracing_pays: 'tracing country',
+    #     last_status: 'last status',
+    #     drop_off_point_name: 'drop-off point name',
+    #     drop_off_point_id: 'drop-off point id',
+    #     last_status_additional: 'extra information',
+    #     tracing: {
+    #       details: [
+    #         {
+    #           status: 'tracing name',
+    #           date: 'tracing date',
+    #           hour: 'tracing hour',
+    #           location: 'tracing city',
+    #           drop_off_point_id: 'drop-off point id',
+    #           drop_off_point_country: 'drop-off point country',
+    #         },
+    #         # ...
+    #       ]
+    #     }
     #   }
     class Trace < Operation
       operation_name :wsi2_tracing_colis_detaille

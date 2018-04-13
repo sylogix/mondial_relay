@@ -8,16 +8,14 @@ module MondialRelay
     #
     # Available fetching params (*M* — mandatory, *O* — optional):
     #
-    # - **Expeditions** — shipment numbers (semicolon separated) *M*.
-    # - **Langue** — language *M*.
-    #
-    # **NOTE**: all params must be provided in the order specified above.
+    # - **shipment_numbers** — shipment numbers (semicolon separated) *M*.
+    # - **language** — language *M*.
     #
     # @example
     #   # Fetch labels of several sizes for provided shipments:
     #   MondialRelay::Labels::Fetch.for(
-    #     Expeditions: '31236189;31236105',
-    #     Langue: 'FR',
+    #     shipment_numbers: '31236189;31236105',
+    #     language: 'FR',
     #   )
     #
     #   # Results in:
