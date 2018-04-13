@@ -26,7 +26,7 @@ module MondialRelay
     end
 
     def security_code_params
-      { Security: SecurityCode.for(params.values) }
+      { Security: SecurityCode.for(operation, params) }
     end
   end
 end

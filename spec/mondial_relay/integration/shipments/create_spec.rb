@@ -22,6 +22,7 @@ RSpec.xdescribe MondialRelay::Shipments::Create, '.for' do
         collection_drop_off_point_id: '094170',
         delivery_country: 'BE',
         delivery_drop_off_point_id: '006515',
+        text: 'hello',
       }
     end
 
