@@ -6,15 +6,6 @@
 The gem works as an interface to the
 [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx).
 
-### Supported features:
-- ➕`WSI3_PointRelais_Recherche`;
-- ➕`WSI2_CreationExpedition`;
-- ➕`WSI2_CreationEtiquette`;
-- ➕`WSI2_TracingColisDetaille`;
-- ➕`WSI3_GetEtiquettes`;
-- ➖`WSI2_RechercheCP`;
-- ➖`WSI2_STAT_Label`.
-
 ### Usage
 Detailed usage examples and available options can be obtained in a gem's [docs](http://www.rubydoc.info/gems/mondial_relay).
 
@@ -31,10 +22,10 @@ end
 Do the drop-off point search:
 ```ruby
 MondialRelay::DropOffPoints::Search.for(
-  Pays: 'FR',
-  CP: '75010',
-  Latitude: '48.8711706',
-  Longitude: '02.3602504',
+  country: 'FR',
+  postal_code: '75010',
+  latitude: '48.8711706',
+  longitude: '02.3602504',
 )
 ```
 See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list of search options.
@@ -43,18 +34,18 @@ See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list o
 Create a shipment and return its number with a label url:
 ```ruby
 MondialRelay::Labels::Create.for(
-  ModeCol: 'REL',
-  ModeLiv: '24R',
-  Expe_Langage: 'FR',
-  Expe_Ad1: 'Test Sender',
+  collection_mode: 'REL',
+  delivery_mode: '24R',
+  sender_language: 'FR',
+  sender_name: 'Test Sender',
   # ...
 )
 ```
 Fetch labels of several sizes for provided shipments:
 ```ruby
 MondialRelay::Labels::Fetch.for(
-  Expeditions: '31236189',
-  Langue: 'FR',
+  shipment_numbers: '31236189',
+  language: 'FR',
 )
 ```
 See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list of options.
@@ -63,19 +54,18 @@ See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list o
 Create a shipment and return its number with some extra information:
 ```ruby
 MondialRelay::Shipments::Create.for(
-  ModeCol: 'REL',
-  ModeLiv: '24R',
-  Expe_Langage: 'FR',
-  Expe_Ad1: 'Test Sender',
+  collection_mode: 'REL',
+  delivery_mode: '24R',
+  sender_language: 'FR',
+  sender_name: 'Test Sender',
   # ...
 )
 ```
 Get the shipment details:
 ```ruby
-# Currently not working because of the Web-Service side reasons
 MondialRelay::Shipments::Trace.for(
-  Expeditions: '31236189',
-  Langue: 'FR',
+  shipment_number: '31236189',
+  language: 'FR',
 )
 ```
 See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list of options.
