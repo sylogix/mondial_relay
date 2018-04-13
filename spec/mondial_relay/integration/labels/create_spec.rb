@@ -34,7 +34,7 @@ RSpec.xdescribe MondialRelay::Labels::Create, '.for' do
     end
 
     let(:response_keys) do
-      %i[expedition_num url_etiquette]
+      %i(shipment_number url_label)
     end
   end
 end

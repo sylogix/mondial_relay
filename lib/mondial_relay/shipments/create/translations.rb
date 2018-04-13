@@ -60,7 +60,16 @@ module MondialRelay
           text: :Texte,
         }.freeze
 
-        RESPONSE = {}.freeze
+        RESPONSE = {
+          expedition_num: :shipment_number,
+          tri_agence_code: :agency_code,
+          tri_groupe: :group,
+          tri_navette: :shuttle_run_number,
+          tri_agence: :agency,
+          tri_tournee_code: :delivery_run,
+          tri_livraison_mode: :mode_of_delivery,
+          codes_barres: :bar_codes,
+        }.freeze
       end
     end
   end

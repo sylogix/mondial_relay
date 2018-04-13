@@ -15,7 +15,7 @@ RSpec.xdescribe MondialRelay::DropOffPoints::Search, '.for' do
     end
 
     let(:response_keys) do
-      %i[id postal_code country latitude longitude]
+      %i(id postal_code country latitude longitude)
     end
   end
 end

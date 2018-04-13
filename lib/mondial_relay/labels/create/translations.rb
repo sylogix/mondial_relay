@@ -57,7 +57,10 @@ module MondialRelay
           text: :Texte,
         }.freeze
 
-        RESPONSE = {}.freeze
+        RESPONSE = {
+          expedition_num: :shipment_number,
+          url_etiquette: :url_label,
+        }.freeze
       end
     end
   end

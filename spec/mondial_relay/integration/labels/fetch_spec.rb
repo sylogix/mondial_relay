@@ -10,7 +10,7 @@ RSpec.xdescribe MondialRelay::Labels::Fetch, '.for' do
     end
 
     let(:response_keys) do
-      %i[url_pdf_a4 url_pdf_a5 url_pdf_10x15]
+      %i(url_pdf_a4 url_pdf_a5 url_pdf_10x15)
     end
   end
 end

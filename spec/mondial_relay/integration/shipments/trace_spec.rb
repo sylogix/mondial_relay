@@ -4,13 +4,13 @@ RSpec.xdescribe MondialRelay::Shipments::Trace, '.for' do
   it_behaves_like :query do
     let(:params) do
       {
-        shipment_number: '31236189',
+        shipment_number: '20720967',
         language: 'FR',
       }
     end
 
     let(:response_keys) do
-      %i[libelle_01 libelle_02 tracing]
+      %i(last_status drop_off_point_name drop_off_point_id tracing)
     end
   end
 end

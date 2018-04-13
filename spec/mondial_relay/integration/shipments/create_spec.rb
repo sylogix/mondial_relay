@@ -34,7 +34,7 @@ RSpec.xdescribe MondialRelay::Shipments::Create, '.for' do
     end
 
     let(:response_keys) do
-      %i[expedition_num tri_agence_code tri_agence]
+      %i(shipment_number agency_code agency)
     end
   end
 end
