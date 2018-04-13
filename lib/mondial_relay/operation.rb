@@ -35,8 +35,8 @@ module MondialRelay
 
     def adjusted_params
       params_with_defaults = add_defaults_to_params(params)
-      translated_params = translate_params(params_with_defaults)
-      format_params(translated_params)
+      formatted_params = format_params(params_with_defaults)
+      translate_params(formatted_params)
     end
 
     def adjusted_response
