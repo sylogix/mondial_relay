@@ -47,13 +47,15 @@ Bundler/OrderedGems:
   Enabled: false
 
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5.1
   DisplayCopNames: true
   Include:
     - '**/Rakefile'
     - '**/*.rake'
+
+Metrics/BlockLength:
   Exclude:
-    - db/**/*
-    - config/constants/manual_feature_rollout.rb
-    - config/constants/constants.rb
-    - config/constants/ads.rb
+    - 'Rakefile'
+    - '**/*.rake'
+    - '**/*_spec.rb'
+    - 'spec/factories/*'
