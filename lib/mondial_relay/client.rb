@@ -24,6 +24,8 @@ module MondialRelay
         log: MondialRelay.config.debug,
         log_level: :debug,
         pretty_print_xml: true,
+
+        adapter: MondialRelay.config.http_adapter,
       }
     end
 

@@ -5,6 +5,8 @@ module MondialRelay
     attr_accessor :api_wsdl_url, :api_url, :merchant_id, :api_secret,
       :api_timeout, :api_max_retries, :debug, :monitor
 
+    attr_reader :http_adapter
+
     def initialize
       @api_wsdl_url = 'https://api.mondialrelay.com/Web_Services.asmx?WSDL'
       @api_url = 'http://www.mondialrelay.fr/webservice/'
@@ -18,6 +20,8 @@ module MondialRelay
       @debug = false
 
       @monitor = nil
+
+      @http_adapter = :net_http
     end
   end
 end
