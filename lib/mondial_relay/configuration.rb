@@ -2,8 +2,12 @@
 
 module MondialRelay
   class Configuration
+    # TODO: Create services
+    DEFAULT_SERVICES = %i().freeze
+
     attr_accessor :api_wsdl_url, :api_url, :merchant_id, :api_secret,
-      :api_timeout, :api_max_retries, :debug, :monitor
+                  :api_timeout, :api_max_retries, :debug, :monitor,
+                  :enabled_services
 
     attr_reader :http_adapter
 
@@ -17,8 +21,9 @@ module MondialRelay
       @api_timeout = 10
       @api_max_retries = 2
 
-      @debug = false
+      @enabled_services = DEFAULT_SERVICES
 
+      @debug = false
       @monitor = nil
 
       @http_adapter = :net_http

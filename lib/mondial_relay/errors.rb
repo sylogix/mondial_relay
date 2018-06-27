@@ -9,6 +9,8 @@ module MondialRelay
 
   class EncodingError < Error; end
 
+  class InvalidServiceError < Error; end
+
   class ResponseError < Error
     attr_reader :status
 

@@ -15,6 +15,10 @@ require 'mondial_relay/translatable'
 require 'mondial_relay/formattable'
 require 'mondial_relay/has_defaults'
 
+require 'mondial_relay/services'
+require 'mondial_relay/service_registry'
+require 'mondial_relay/services/base_service'
+
 require 'mondial_relay/drop_off_points/search'
 require 'mondial_relay/drop_off_points/search/format_params'
 require 'mondial_relay/drop_off_points/search/format_response'
@@ -50,6 +54,19 @@ module MondialRelay
 
   def configure
     yield(config)
+    register_services
+  end
+
+  def services
+    @services
+  end
+
+  def register_services
+    @services = ServiceRegistry.new
+
+    config.enabled_services.each do |service_name|
+      @services.register(Services.build(service_name))
+    end
   end
 
   def client
