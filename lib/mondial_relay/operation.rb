@@ -13,11 +13,14 @@ module MondialRelay
 
     include Interactor::Initializer
 
-    class << self
-      attr_reader :service_endpoint
+    DEFAULT_SERVICE = :generic
 
-      def operation_name(service_endpoint)
-        @service_endpoint = service_endpoint
+    class << self
+      attr_reader :operation, :service
+
+      def configure(operation:, service: nil)
+        @operation = operation
+        @service = service || DEFAULT_SERVICE
       end
     end
 
@@ -28,10 +31,6 @@ module MondialRelay
     end
 
     private
-
-    def operation_name
-      self.class.service_endpoint
-    end
 
     def adjusted_params
       params_with_defaults = add_defaults_to_params(params)
@@ -45,12 +44,15 @@ module MondialRelay
     end
 
     def response
-      MondialRelay::Query.run(service, operation_name, adjusted_params)
+      MondialRelay::Query.run(service, operation, adjusted_params)
+    end
+
+    def operation
+      self.class.operation
     end
 
     def service_name
-      # TODO: Add a configurable interface for setting this
-      :generic
+      self.class.service
     end
 
     def service

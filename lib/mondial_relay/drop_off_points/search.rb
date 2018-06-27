@@ -37,7 +37,7 @@ module MondialRelay
     #     longitude: '02.3602504'
     #   )
     class Search < Operation
-      operation_name :wsi4_point_relais_recherche
+      configure operation: :wsi4_point_relais_recherche
     end
   end
 end

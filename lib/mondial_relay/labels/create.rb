@@ -88,7 +88,7 @@ module MondialRelay
     #     url_label: 'A4 label url',
     #   }
     class Create < Operation
-      operation_name :wsi2_creation_etiquette
+      configure operation: :wsi2_creation_etiquette
     end
   end
 end

@@ -26,7 +26,7 @@ module MondialRelay
     #     url_pdf_10x15: '',
     #   }
     class Fetch < Operation
-      operation_name :wsi3_get_etiquettes
+      configure operation: :wsi3_get_etiquettes
     end
   end
 end

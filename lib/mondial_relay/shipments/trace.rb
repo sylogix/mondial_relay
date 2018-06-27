@@ -40,7 +40,7 @@ module MondialRelay
     #     }
     #   }
     class Trace < Operation
-      operation_name :wsi2_tracing_colis_detaille
+      configure operation: :wsi2_tracing_colis_detaille
     end
   end
 end

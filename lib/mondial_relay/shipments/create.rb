@@ -96,7 +96,7 @@ module MondialRelay
     #     },
     #   }
     class Create < Operation
-      operation_name :wsi2_creation_expedition
+      configure operation: :wsi2_creation_expedition
     end
   end
 end
