@@ -8,6 +8,7 @@ require 'webmock/rspec'
 require 'mondial_relay/shared_examples/query'
 require 'mondial_relay/shared_examples/translatable'
 require 'mondial_relay/shared_examples/operation'
+require 'mondial_relay/shared_examples/service'
 
 RSpec.configure do |config|
   config.before do

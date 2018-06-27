@@ -2,8 +2,7 @@
 
 module MondialRelay
   class Configuration
-    # TODO: Create services
-    DEFAULT_SERVICES = %i().freeze
+    DEFAULT_SERVICES = %i(generic).freeze
 
     attr_accessor :api_wsdl_url, :api_url, :merchant_id, :api_secret,
                   :api_timeout, :api_max_retries, :debug, :monitor,

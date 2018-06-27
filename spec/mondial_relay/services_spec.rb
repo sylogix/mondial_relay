@@ -4,7 +4,13 @@ RSpec.describe MondialRelay::Services do
   describe '.build' do
     subject { described_class.build(service_name) }
 
-    # TODO: Add a spec for valid servers when they are added
+    context 'with a valid service name' do
+      let(:service_name) { :generic }
+
+      it 'it does not raise an error' do
+        expect { subject }.not_to raise_error
+      end
+    end
 
     context 'with an invalid service name' do
       let(:service_name) { :invalid }

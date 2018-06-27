@@ -18,4 +18,8 @@ FactoryBot.define do
 
     initialize_with { new(operation, params) }
   end
+
+  factory :generic_service, class: MondialRelay::Services::GenericService
+
+  factory :service_registry, class: MondialRelay::ServiceRegistry
 end

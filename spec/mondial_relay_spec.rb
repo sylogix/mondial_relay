@@ -34,11 +34,18 @@ RSpec.describe MondialRelay do
     let(:api_url) { 'new' }
 
     before do
-      described_class.configure { |config| config.api_url = api_url }
+      described_class.configure do |config|
+        config.api_url = api_url
+        config.enabled_services = %i(generic)
+      end
     end
 
     it 'allows to set configuration' do
       expect(described_class.config.api_url).to eq(api_url)
+    end
+
+    it 'registers services' do
+      expect(described_class.services.resolve(:generic)).not_to be_nil
     end
   end
 
