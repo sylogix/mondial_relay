@@ -7,7 +7,11 @@ RSpec.shared_examples :service do
     before { allow(service).to receive(:wsdl_url) }
 
     it 'creates a client' do
-      expect(MondialRelay::Client).to receive(:new).once
+      expect(MondialRelay::Client)
+        .to receive(:new)
+        .with(service.wsdl_url)
+        .once
+
       subject
     end
   end

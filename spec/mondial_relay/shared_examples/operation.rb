@@ -19,8 +19,11 @@ RSpec.shared_examples :operation do
 
     expect(MondialRelay::Query)
       .to(receive(:run))
-      .with(described_class.service_endpoint, Hash)
-      .and_return(response)
+      .with(
+        MondialRelay::Services::GenericService,
+        described_class.service_endpoint,
+        Hash,
+      ).and_return(response)
   end
 
   it { is_expected.to eq(response) }

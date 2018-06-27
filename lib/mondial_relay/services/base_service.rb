@@ -10,8 +10,7 @@ module MondialRelay
       end
 
       def client
-        # TODO: Initialize with a wsdl_url
-        @client ||= Client.new
+        @client ||= Client.new(wsdl_url)
       end
 
       def wsdl_url

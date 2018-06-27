@@ -2,13 +2,14 @@
 
 module MondialRelay
   class Query
-    attr_reader :operation, :params
+    attr_reader :service, :operation, :params
 
-    def self.run(operation, params)
-      new(operation, params).execute!
+    def self.run(service, operation, params)
+      new(service, operation, params).execute!
     end
 
-    def initialize(operation, params)
+    def initialize(service, operation, params)
+      @service = service
       @operation = operation
       @params = params
     end
@@ -29,7 +30,7 @@ module MondialRelay
     end
 
     def response
-      @response ||= MondialRelay.client.call(request)
+      @response ||= service.client.call(request)
     end
 
     def request

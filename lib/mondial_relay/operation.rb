@@ -45,7 +45,16 @@ module MondialRelay
     end
 
     def response
-      MondialRelay::Query.run(operation_name, adjusted_params)
+      MondialRelay::Query.run(service, operation_name, adjusted_params)
+    end
+
+    def service_name
+      # TODO: Add a configurable interface for setting this
+      :generic
+    end
+
+    def service
+      MondialRelay.services.resolve(service_name)
     end
   end
 end

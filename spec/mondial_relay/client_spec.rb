@@ -13,10 +13,10 @@ RSpec.describe MondialRelay::Client do
     let(:request) { build(:request) }
 
     context 'with a successful request' do
-      let(:response) { %w[test] }
+      let(:response) { %w(test) }
 
       before do
-        stub_request(:get, MondialRelay.config.api_wsdl_url)
+        stub_request(:get, client.wsdl_url)
         allow(client.soap_client).to receive(:call).and_return(response)
       end
 
@@ -27,7 +27,7 @@ RSpec.describe MondialRelay::Client do
 
     context 'when the request times out' do
       before do
-        stub_request(:get, MondialRelay.config.api_wsdl_url).to_timeout
+        stub_request(:get, client.wsdl_url).to_timeout
       end
 
       it 'raises an error' do

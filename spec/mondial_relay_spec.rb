@@ -23,7 +23,6 @@ RSpec.describe MondialRelay do
     let(:config) { build(:configuration) }
 
     it 'resets a configuration' do
-      expect(subject.api_wsdl_url).to eq(config.api_wsdl_url)
       expect(subject.api_url).to eq(config.api_url)
       expect(subject.merchant_id).to eq(config.merchant_id)
       expect(subject.api_secret).to eq(config.api_secret)

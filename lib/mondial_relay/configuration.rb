@@ -11,7 +11,9 @@ module MondialRelay
     attr_reader :http_adapter
 
     def initialize
-      @api_wsdl_url = 'https://api.mondialrelay.com/Web_Services.asmx?WSDL'
+      # TODO: This is not longer used. Remove it with the next major version
+      @api_wsdl_url = nil
+
       @api_url = 'http://www.mondialrelay.fr/webservice/'
 
       @merchant_id = nil

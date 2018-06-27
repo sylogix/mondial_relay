@@ -3,7 +3,9 @@
 RSpec.xdescribe MondialRelay::Client do
   WebMock.allow_net_connect!(net_http_connect_on_start: true)
 
-  let(:client) { build(:client) }
+  let(:client) do
+    build(:client, wsdl_url: MondialRelay::Services::GenericService::WSDL_URL)
+  end
 
   describe '#operations' do
     subject { client.operations }

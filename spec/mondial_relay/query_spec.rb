@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.describe MondialRelay::Query, '.run' do
-  subject { described_class.run(operation, params) }
+  subject { described_class.run(service, operation, params) }
 
-  let(:client) { MondialRelay.client }
+  let(:service) { build(:generic_service) }
+  let(:client) { service.client }
 
   let(:operation) { :test }
   let(:params) { {} }
@@ -20,7 +21,7 @@ RSpec.describe MondialRelay::Query, '.run' do
   end
 
   before do
-    stub_request(:get, MondialRelay.config.api_wsdl_url)
+    stub_request(:get, client.wsdl_url)
 
     allow(client).to receive(:call).and_return(response)
     allow(response).to receive(:body).and_return(body)

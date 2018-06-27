@@ -4,27 +4,27 @@ require 'savon'
 
 module MondialRelay
   class Client
-    attr_reader :soap_client
+    attr_reader :wsdl_url
 
-    def initialize
-      @soap_client = Savon.client(config)
+    def initialize(wsdl_url)
+      @wsdl_url = wsdl_url
+    end
+
+    def soap_client
+      @soap_client ||= Savon.client(config)
     end
 
     def config
       @config ||= {
-        wsdl: MondialRelay.config.api_wsdl_url,
-
+        wsdl: wsdl_url,
         convert_request_keys_to: :none,
         element_form_default: :unqualified,
         env_namespace: :soap,
-
         open_timeout: MondialRelay.config.api_timeout,
         read_timeout: MondialRelay.config.api_timeout,
-
         log: MondialRelay.config.debug,
         log_level: :debug,
         pretty_print_xml: true,
-
         adapter: MondialRelay.config.http_adapter,
       }
     end

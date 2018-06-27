@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :client, class: MondialRelay::Client do; end
+  factory :client, class: MondialRelay::Client do
+    wsdl_url 'https://api.mondialrelay.com'
+
+    initialize_with { new(wsdl_url) }
+  end
 
   factory :request, class: MondialRelay::Request do
     operation :test
