@@ -24,6 +24,7 @@ FactoryBot.define do
   end
 
   factory :generic_service, class: MondialRelay::Services::GenericService
+  factory :drop_off_points_service, class: MondialRelay::Services::DropOffPointsService
 
   factory :service_registry, class: MondialRelay::ServiceRegistry
 end

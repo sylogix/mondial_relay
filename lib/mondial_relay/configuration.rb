@@ -2,7 +2,10 @@
 
 module MondialRelay
   class Configuration
-    DEFAULT_SERVICES = %i(generic).freeze
+    DEFAULT_SERVICES = %i(
+      generic
+      drop_off_points
+    ).freeze
 
     attr_accessor :api_wsdl_url, :api_url, :merchant_id, :api_secret,
                   :api_timeout, :api_max_retries, :debug, :monitor,

@@ -19,6 +19,7 @@ require 'mondial_relay/services'
 require 'mondial_relay/service_registry'
 require 'mondial_relay/services/base_service'
 require 'mondial_relay/services/generic_service'
+require 'mondial_relay/services/drop_off_points_service'
 
 require 'mondial_relay/drop_off_points/search'
 require 'mondial_relay/drop_off_points/search/format_params'
