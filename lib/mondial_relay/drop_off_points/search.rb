@@ -3,7 +3,8 @@
 module MondialRelay
   module DropOffPoints
     # An interface for *drop-off* point search.
-    # Requests the {https://api.mondialrelay.com/Web_Services.asmx?op=WSI4_PointRelais_Recherche
+    # Requests the
+    # {https://api-parcelshop.mondialrelay.com/Web_Services.asmx?op=WSI4_PointRelais_Recherche
     # WSI4_PointRelais_Recherche} endpoint.
     #
     # Available search params (*M* — mandatory, *O* — optional):
@@ -37,7 +38,7 @@ module MondialRelay
     #     longitude: '02.3602504'
     #   )
     class Search < Operation
-      configure operation: :wsi4_point_relais_recherche
+      configure operation: :wsi4_point_relais_recherche, service: :drop_off_points
     end
   end
 end
