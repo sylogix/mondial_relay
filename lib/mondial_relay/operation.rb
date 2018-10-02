@@ -24,7 +24,7 @@ module MondialRelay
       end
     end
 
-    initialize_with :params
+    initialize_with :account, :params
 
     def run
       adjusted_response
@@ -44,7 +44,7 @@ module MondialRelay
     end
 
     def response
-      MondialRelay::Query.run(service, operation, adjusted_params)
+      MondialRelay::Query.run(service, operation, account, adjusted_params)
     end
 
     def operation

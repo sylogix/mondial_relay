@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples :operation do
-  subject { described_class.for(params) }
+  subject { described_class.for(account, params) }
 
   let(:params) { { param: :param } }
+  let(:account) { build(:account) }
   let(:response) { { response: :response } }
 
   before do
@@ -22,6 +23,7 @@ RSpec.shared_examples :operation do
       .with(
         MondialRelay.services.resolve(described_class.service),
         described_class.operation,
+        account,
         Hash,
       ).and_return(response)
   end

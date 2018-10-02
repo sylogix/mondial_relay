@@ -3,16 +3,17 @@
 require 'digest'
 
 RSpec.describe MondialRelay::SecurityCode, '.for' do
-  subject { described_class.for(operation, params) }
+  subject { described_class.for(operation, account, params) }
 
   let(:operation) { :wsi2_creation_etiquette }
+  let(:account) { build(:account) }
   let(:params) { { test: 'test', Texte: 'text' } }
 
   let(:params_for_digest) do
     [
-      MondialRelay.config.merchant_id,
+      account.id,
       params.except(:Texte).values.join,
-      MondialRelay.config.api_secret,
+      account.secret,
     ].join.encode('windows-1252')
   end
 

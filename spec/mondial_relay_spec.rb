@@ -6,6 +6,7 @@ RSpec.describe MondialRelay do
   end
 
   let(:api_url) { 'test' }
+
   before { MondialRelay.config.api_url = api_url }
 
   describe '.config' do
@@ -24,8 +25,6 @@ RSpec.describe MondialRelay do
 
     it 'resets a configuration' do
       expect(subject.api_url).to eq(config.api_url)
-      expect(subject.merchant_id).to eq(config.merchant_id)
-      expect(subject.api_secret).to eq(config.api_secret)
     end
   end
 

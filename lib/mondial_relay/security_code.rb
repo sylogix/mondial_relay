@@ -12,7 +12,7 @@ module MondialRelay
 
     include Interactor::Initializer
 
-    initialize_with :operation, :params
+    initialize_with :operation, :account, :params
 
     def run
       Digest::MD5.hexdigest(params_for_digest).upcase
@@ -22,9 +22,9 @@ module MondialRelay
 
     def params_for_digest
       [
-        MondialRelay.config.merchant_id,
+        account.id,
         params.except(*params_to_exclude).values.join,
-        MondialRelay.config.api_secret,
+        account.secret,
       ].join.encode('windows-1252')
     rescue Encoding::UndefinedConversionError
       raise EncodingError

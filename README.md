@@ -10,18 +10,27 @@ The gem works as an interface to the
 Detailed usage examples and available options can be obtained in a gem's [docs](http://www.rubydoc.info/gems/mondial_relay).
 
 #### Getting started
-A minimal gem's configuration is obtained by providing your credentials to the [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx):
+Several configurations such as `debug` mode or `api_timeout`  can be setup as the following:
 ```ruby
 MondialRelay.configure do |config|
-  config.merchant_id = 'Your Merchant ID'
-  config.api_secret = 'Your Private Key'
+  config.debug = true
+  # .. Other configurations
 end
+```
+
+A merchant account with [Mondial Relay Web service](https://api.mondialrelay.com/Web_Services.asmx) credentials must be created:
+```ruby
+merchant_account = MondialRelay::Account.new(
+  'Your Merchant ID',
+  'Your Private Key',
+)
 ```
 
 #### Drop-Off Points
 Do the drop-off point search:
 ```ruby
 MondialRelay::DropOffPoints::Search.for(
+  merchant_account,
   country: 'FR',
   postal_code: '75010',
   latitude: '48.8711706',
@@ -34,6 +43,7 @@ See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list o
 Create a shipment and return its number with a label url:
 ```ruby
 MondialRelay::Labels::Create.for(
+  merchant_account,
   collection_mode: 'REL',
   delivery_mode: '24R',
   sender_language: 'FR',
@@ -44,6 +54,7 @@ MondialRelay::Labels::Create.for(
 Fetch labels of several sizes for provided shipments:
 ```ruby
 MondialRelay::Labels::Fetch.for(
+  merchant_account,
   shipment_numbers: '31236189',
   language: 'FR',
 )
@@ -54,6 +65,7 @@ See the [docs](http://www.rubydoc.info/gems/mondial_relay) for a detailed list o
 Create a shipment and return its number with some extra information:
 ```ruby
 MondialRelay::Shipments::Create.for(
+  merchant_account,
   collection_mode: 'REL',
   delivery_mode: '24R',
   sender_language: 'FR',
@@ -64,6 +76,7 @@ MondialRelay::Shipments::Create.for(
 Get the shipment details:
 ```ruby
 MondialRelay::Shipments::Trace.for(
+  merchant_account,
   shipment_number: '31236189',
   language: 'FR',
 )

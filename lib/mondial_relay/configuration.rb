@@ -7,17 +7,15 @@ module MondialRelay
       drop_off_points
     ).freeze
 
-    attr_accessor :api_url, :merchant_id, :api_secret,
-                  :api_timeout, :api_max_retries, :debug, :monitor,
-                  :enabled_services
+    API_URL = 'http://www.mondialrelay.fr/webservice/'
+
+    attr_accessor :api_url, :api_timeout, :api_max_retries,
+      :enabled_services, :debug, :monitor
 
     attr_reader :http_adapter
 
     def initialize
-      @api_url = 'http://www.mondialrelay.fr/webservice/'
-
-      @merchant_id = nil
-      @api_secret = nil
+      @api_url = API_URL
 
       @api_timeout = 10
       @api_max_retries = 2

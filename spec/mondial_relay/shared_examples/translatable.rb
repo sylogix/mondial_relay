@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples :translatable do
-  let(:operation) { described_class.new(params) }
+  let(:operation) { described_class.new(params, account) }
 
   let(:params) { { nested: data } }
+  let(:account) { build(:account) }
   let(:data) { described_class::Translations::PARAMS }
 
   describe '#translated_params' do

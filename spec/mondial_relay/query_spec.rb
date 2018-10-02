@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 RSpec.describe MondialRelay::Query, '.run' do
-  subject { described_class.run(service, operation, params) }
+  subject { described_class.run(service, operation, account, params) }
 
   let(:service) { build(:generic_service) }
   let(:client) { service.client }
 
   let(:operation) { :test }
+  let(:account) { build(:account) }
   let(:params) { {} }
 
   let(:response) { double(:response) }

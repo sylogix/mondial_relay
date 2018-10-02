@@ -2,10 +2,11 @@
 
 module MondialRelay
   class Request
-    attr_reader :operation, :params
+    attr_reader :operation, :account, :params
 
-    def initialize(operation, params = {})
+    def initialize(operation, account, params = {})
       @operation = operation
+      @account = account
       @params = params.reject { |_, val| val.to_s.size.zero? }
     end
 
@@ -22,11 +23,11 @@ module MondialRelay
     private
 
     def merchant_id_params
-      { Enseigne: MondialRelay.config.merchant_id }
+      { Enseigne: account.id }
     end
 
     def security_code_params
-      { Security: SecurityCode.for(operation, params) }
+      { Security: SecurityCode.for(operation, account, params) }
     end
   end
 end

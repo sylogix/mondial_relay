@@ -24,12 +24,12 @@ RSpec.describe MondialRelay::Request do
       expect(subject).to include(*request.params.keys)
     end
 
-    it ':Enseigne is the first option' do
+    it 'correctly sets account options' do
       expect(subject.keys.first).to eq(:Enseigne)
-    end
+      expect(subject[:Enseigne]).to eq(request.account.id)
 
-    it ':Security is the first option' do
       expect(subject.keys.last).to eq(:Security)
+      expect(subject[:Security]).not_to be_blank
     end
   end
 end

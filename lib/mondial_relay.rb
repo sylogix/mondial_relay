@@ -9,6 +9,7 @@ require 'mondial_relay/security_code'
 require 'mondial_relay/client'
 require 'mondial_relay/request'
 require 'mondial_relay/query'
+require 'mondial_relay/account'
 
 require 'mondial_relay/operation'
 require 'mondial_relay/translatable'
@@ -69,10 +70,6 @@ module MondialRelay
     config.enabled_services.each do |service_name|
       @services.register(Services.build(service_name))
     end
-  end
-
-  def client
-    @client ||= Client.new
   end
 
   def monitor(monitorable)
