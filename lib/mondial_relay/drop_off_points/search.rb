@@ -32,6 +32,7 @@ module MondialRelay
     # @example
     #   # Do the drop-off point search:
     #   MondialRelay::DropOffPoints::Search.for(
+    #     mondial_account,
     #     country: 'FR',
     #     postal_code: '75010',
     #     latitude: '48.8711706',

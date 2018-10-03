@@ -14,6 +14,7 @@ module MondialRelay
     # @example
     #   # Fetch labels of several sizes for provided shipments:
     #   MondialRelay::Labels::Fetch.for(
+    #     mondial_account,
     #     shipment_numbers: '31236189;31236105',
     #     language: 'FR',
     #   )

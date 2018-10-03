@@ -61,6 +61,7 @@ module MondialRelay
     # @example
     #   # Create a shipment and returns its number with a label url:
     #   MondialRelay::Shipments::Create.for(
+    #     mondial_account,
     #     sender_name: 'Test Sender',
     #     sender_address: '38 Route de Rennes',
     #     sender_city: 'Nantes',

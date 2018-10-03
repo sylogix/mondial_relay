@@ -14,6 +14,7 @@ module MondialRelay
     # @example
     #   # Get the shipment details:
     #   MondialRelay::Shipments::Trace.for(
+    #     mondial_account,
     #     shipment_number: '31236105',
     #     language: 'FR',
     #   )
