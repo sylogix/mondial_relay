@@ -89,7 +89,7 @@ module MondialRelay
     module_function
 
     def success?(status)
-      status.zero? || (80..83).include?(status)
+      status&.zero? || (80..83).cover?(status)
     end
 
     def message_for(status)
