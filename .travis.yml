@@ -1,7 +1,7 @@
 language: ruby
 rvm:
-- 2.5.1
+- 2.6.0
 before_install:
-- gem install bundler -v 1.16.2
+- gem install bundler -v 1.17.3
 after_success:
 - export PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} && bundle exec pronto run -f github_pr
