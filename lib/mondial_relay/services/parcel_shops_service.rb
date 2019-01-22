@@ -2,11 +2,11 @@
 
 module MondialRelay
   module Services
-    class DropOffPointsService < BaseService
+    class ParcelShopsService < BaseService
       WSDL_URL = 'https://api-parcelshop.mondialrelay.com/Web_Services.asmx?WSDL'
 
       def initialize
-        super(:drop_off_points)
+        super(:parcel_shops)
       end
 
       def wsdl_url

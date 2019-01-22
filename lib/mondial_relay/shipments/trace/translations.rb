@@ -11,14 +11,14 @@ module MondialRelay
 
         RESPONSE = {
           libelle01: :last_status,
-          relais_libelle: :drop_off_point_name,
-          relais_num: :drop_off_point_id,
+          relais_libelle: :parcel_shop_name,
+          relais_num: :parcel_shop_id,
           libelle02: :last_status_additional,
           ret_wsi2_sub_tracing_colis_detaille: :details,
           libelle: :status,
           heure: :hour,
           emplacement: :location,
-          relais_pays: :drop_off_point_country,
+          relais_pays: :parcel_shop_country,
         }.freeze
       end
     end

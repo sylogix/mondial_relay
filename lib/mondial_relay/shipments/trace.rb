@@ -23,8 +23,8 @@ module MondialRelay
     #   {
     #     stat: '0',
     #     last_status: 'last status',
-    #     drop_off_point_name: 'drop-off point name',
-    #     drop_off_point_id: 'drop-off point id',
+    #     drop_off_point_name: 'parcel shop name',
+    #     drop_off_point_id: 'parcel shop id',
     #     last_status_additional: 'extra information',
     #     tracing: {
     #       details: [
@@ -33,8 +33,8 @@ module MondialRelay
     #           date: 'tracing date',
     #           hour: 'tracing hour',
     #           location: 'tracing city',
-    #           drop_off_point_id: 'drop-off point id',
-    #           drop_off_point_country: 'drop-off point country',
+    #           drop_off_point_id: 'parcel shop id',
+    #           drop_off_point_country: 'parcel shop country',
     #         },
     #         # ...
     #       ]

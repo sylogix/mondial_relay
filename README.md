@@ -27,9 +27,9 @@ merchant_account = MondialRelay::Account.new(
 ```
 
 #### Drop-Off Points
-Do the drop-off point search:
+Do the parcel shop search:
 ```ruby
-MondialRelay::DropOffPoints::Search.for(
+MondialRelay::ParcelShops::Search.for(
   merchant_account,
   country: 'FR',
   postal_code: '75010',
@@ -88,4 +88,4 @@ Documentation is generated using [Yard](https://yardoc.org/).
 
 ### Contribution
 - Each endpoint (operation) should be documented.
-- Each entity (e.g. *drop-off* point) should provide a public interface to query the API.
+- Each entity (e.g. *parcel shop*) should provide a public interface to query the API.

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.xdescribe MondialRelay::DropOffPoints::Search, '.for' do
+RSpec.xdescribe MondialRelay::ParcelShops::Search, '.for' do
   it_behaves_like :query do
     let(:params) do
       {

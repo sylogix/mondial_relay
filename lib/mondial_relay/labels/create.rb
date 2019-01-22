@@ -46,9 +46,9 @@ module MondialRelay
     #   Obligatory if collected at Point Relais.
     # - **collection_drop_off_point_id** — pickup point ID *O/M*.
     #   Obligatory if collected at Point Relais.
-    # - **delivery_country** — drop-off point country code (ISO) *O/M*.
+    # - **delivery_country** — parcel shop country code (ISO) *O/M*.
     #   Obligatory if delivered at Point Relais.
-    # - **delivery_drop_off_point_id** — drop-off point ID *O/M*.
+    # - **delivery_drop_off_point_id** — parcel shop ID *O/M*.
     #   Obligatory if delivered at Point Relais.
     # - **notify** — notification request for shipment `^(|O|N)$` *O*.
     # - **reprise** — `^(|O|N)$` *O*.

@@ -4,7 +4,7 @@ module MondialRelay
   class Configuration
     DEFAULT_SERVICES = %i(
       generic
-      drop_off_points
+      parcel_shops
     ).freeze
 
     API_URL = 'http://www.mondialrelay.fr/webservice/'

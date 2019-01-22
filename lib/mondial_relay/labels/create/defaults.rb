@@ -44,9 +44,9 @@ module MondialRelay
           currency: nil,
 
           collection_country: nil,
-          collection_drop_off_point_id: nil,
+          collection_parcel_shop_id: nil,
           delivery_country: nil,
-          delivery_drop_off_point_id: nil,
+          delivery_parcel_shop_id: nil,
 
           notify: nil,
           reprise: nil,

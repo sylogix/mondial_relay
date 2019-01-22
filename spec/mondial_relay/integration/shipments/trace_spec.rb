@@ -7,7 +7,7 @@ RSpec.xdescribe MondialRelay::Shipments::Trace, '.for' do
     end
 
     let(:response_keys) do
-      %i(last_status drop_off_point_name drop_off_point_id tracing)
+      %i(last_status parcel_shop_name parcel_shop_id tracing)
     end
   end
 end

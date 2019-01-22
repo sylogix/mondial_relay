@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module MondialRelay
-  module DropOffPoints
-    # An interface for *drop-off* point search.
+  module ParcelShops
+    # An interface for *parcel shop* search.
     # Requests the
     # {https://api-parcelshop.mondialrelay.com/Web_Services.asmx?op=WSI4_PointRelais_Recherche
     # WSI4_PointRelais_Recherche} endpoint.
@@ -10,7 +10,7 @@ module MondialRelay
     # Available search params (*M* — mandatory, *O* — optional):
     #
     # - **country_code** — country code (ISO) *M*.
-    # - **drop_off_point_id** — particular drop-off point ID *O/M*.
+    # - **parcel_shop_id** — particular parcel shop ID *O/M*.
     # - **city** — should not be used *O/M*.
     # - **postal_code** — zip code as a search origin *O/M*.
     #   Results will be sorted by distance from the origin.
@@ -30,8 +30,8 @@ module MondialRelay
     # - **number_of_results** - number of results (max 30) *O*.
     #
     # @example
-    #   # Do the drop-off point search:
-    #   MondialRelay::DropOffPoints::Search.for(
+    #   # Do the parcel shop search:
+    #   MondialRelay::ParcelShops::Search.for(
     #     mondial_account,
     #     country: 'FR',
     #     postal_code: '75010',
@@ -39,7 +39,7 @@ module MondialRelay
     #     longitude: '02.3602504'
     #   )
     class Search < Operation
-      configure operation: :wsi4_point_relais_recherche, service: :drop_off_points
+      configure operation: :wsi4_point_relais_recherche, service: :parcel_shops
     end
   end
 end

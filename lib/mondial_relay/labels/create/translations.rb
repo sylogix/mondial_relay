@@ -44,9 +44,9 @@ module MondialRelay
           currency: :Exp_Devise,
 
           collection_country: :COL_Rel_Pays,
-          collection_drop_off_point_id: :COL_Rel,
+          collection_parcel_shop_id: :COL_Rel,
           delivery_country: :LIV_Rel_Pays,
-          delivery_drop_off_point_id: :LIV_Rel,
+          delivery_parcel_shop_id: :LIV_Rel,
 
           notify: :TAvisage,
           reprise: :TReprise,

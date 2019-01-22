@@ -3,7 +3,7 @@
 require 'interactor/initializer'
 
 module MondialRelay
-  module DropOffPoints
+  module ParcelShops
     class Search
       class FormatResponse
         include Interactor::Initializer
