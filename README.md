@@ -26,7 +26,7 @@ merchant_account = MondialRelay::Account.new(
 )
 ```
 
-#### Drop-Off Points
+#### Parcel Shops
 Do the parcel shop search:
 ```ruby
 MondialRelay::ParcelShops::Search.for(

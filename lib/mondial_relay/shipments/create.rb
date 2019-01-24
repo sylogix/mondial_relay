@@ -44,11 +44,11 @@ module MondialRelay
     # - **currency** — currency of shipment value (EUR) *O*.
     # - **collection_country** — pickup point country code (ISO) *O/M*.
     #   Obligatory if collected at Point Relais.
-    # - **collection_drop_off_point_id** — pickup point ID *O/M*.
+    # - **collection_parcel_shop_id** — pickup point ID *O/M*.
     #   Obligatory if collected at Point Relais.
     # - **delivery_country** — parcel shop country code (ISO) *O/M*.
     #   Obligatory if delivered at Point Relais.
-    # - **delivery_drop_off_point_id** — parcel shop ID *O/M*.
+    # - **delivery_parcel_shop_id** — parcel shop ID *O/M*.
     #   Obligatory if delivered at Point Relais.
     # - **notify** — notification request for shipment `^(|O|N)$` *O*.
     # - **reprise** — `^(|O|N)$` *O*.
@@ -77,9 +77,9 @@ module MondialRelay
     #
     #     parcel_weight: 500,
     #     collection_country: 'FR',
-    #     collection_drop_off_point_id: '094170',
+    #     collection_parcel_shop_id: '094170',
     #     delivery_country: 'BE',
-    #     delivery_drop_off_point_id: '006515',
+    #     delivery_parcel_shop_id: '006515',
     #   )
     #
     #   # Results in:
