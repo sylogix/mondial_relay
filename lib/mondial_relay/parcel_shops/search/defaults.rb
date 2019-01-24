@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module MondialRelay
-  module DropOffPoints
+  module ParcelShops
     class Search
       module Defaults
         PARAMS = {
           country: nil,
-          drop_off_point_id: nil,
+          parcel_shop_id: nil,
           city: nil,
           postal_code: nil,
           latitude: nil,

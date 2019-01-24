@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe MondialRelay::Translatable do
-  describe MondialRelay::DropOffPoints::Search do
+  describe MondialRelay::ParcelShops::Search do
     it_behaves_like :translatable
   end
 

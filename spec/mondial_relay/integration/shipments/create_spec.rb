@@ -19,9 +19,9 @@ RSpec.xdescribe MondialRelay::Shipments::Create, '.for' do
 
         parcel_weight: 500,
         collection_country: 'FR',
-        collection_drop_off_point_id: '094170',
+        collection_parcel_shop_id: '094170',
         delivery_country: 'BE',
-        delivery_drop_off_point_id: '006515',
+        delivery_parcel_shop_id: '006515',
         text: 'hello',
       }
     end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module MondialRelay
-  module DropOffPoints
+  module ParcelShops
     class Search
       module Translations
         PARAMS = {
           country: :Pays,
-          drop_off_point_id: :NumPointRelais,
+          parcel_shop_id: :NumPointRelais,
           city: :Ville,
           postal_code: :CP,
           latitude: :Latitude,
