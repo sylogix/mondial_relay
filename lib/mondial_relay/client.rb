@@ -24,6 +24,7 @@ module MondialRelay
         read_timeout: MondialRelay.config.api_timeout,
         log: MondialRelay.config.debug,
         log_level: :debug,
+        logger: MondialRelay.config.logger,
         pretty_print_xml: true,
         adapter: MondialRelay.config.http_adapter,
       }

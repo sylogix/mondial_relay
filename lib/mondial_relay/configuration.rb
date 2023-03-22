@@ -10,7 +10,7 @@ module MondialRelay
     API_URL = 'http://www.mondialrelay.fr/webservice/'
 
     attr_accessor :api_url, :api_timeout, :api_max_retries,
-      :enabled_services, :debug, :monitor
+      :enabled_services, :debug, :monitor, :logger
 
     attr_reader :http_adapter
 
@@ -24,6 +24,7 @@ module MondialRelay
 
       @debug = false
       @monitor = nil
+      @logger = Logger.new($stdout)
 
       @http_adapter = :net_http
     end
