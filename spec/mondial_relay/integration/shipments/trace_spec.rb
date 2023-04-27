@@ -3,7 +3,7 @@
 RSpec.xdescribe MondialRelay::Shipments::Trace, '.for' do
   it_behaves_like :query do
     let(:params) do
-      { shipment_number: '20720967' }
+      { shipment_number: '20720967' } # We need to find a tracking number for testing
     end
 
     let(:response_keys) do
