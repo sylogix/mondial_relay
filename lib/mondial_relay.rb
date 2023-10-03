@@ -44,6 +44,11 @@ require 'mondial_relay/shipments/trace'
 require 'mondial_relay/shipments/trace/translations'
 require 'mondial_relay/shipments/trace/defaults'
 
+require 'mondial_relay/postal_codes/search'
+require 'mondial_relay/postal_codes/search/format_response'
+require 'mondial_relay/postal_codes/search/translations'
+require 'mondial_relay/postal_codes/search/defaults'
+
 module MondialRelay
   module_function
 
